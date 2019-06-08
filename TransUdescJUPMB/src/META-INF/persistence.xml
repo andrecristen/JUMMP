@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="JUMMPPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>models.Carregamento</class>
+    <class>models.Endereco</class>
+    <class>models.Entrega</class>
+    <class>models.Filial</class>
+    <class>models.Pessoa</class>
+    <class>models.PessoaFisica</class>
+    <class>models.PessoaJuridica</class>
+    <class>models.TrackingCarregamento</class>
+    <class>models.TrackingEntrega</class>
+    <class>models.TransportadoraRedespacho</class>
+    <class>models.Usuario</class>
+    <class>models.Veiculo</class>
+    <class>models.Volume</class>
+    <validation-mode>NONE</validation-mode>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/transudesc"/>
+      <property name="javax.persistence.jdbc.user" value="postgres"/>
+      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="123456"/>
+    </properties>
+  </persistence-unit>
+</persistence>
