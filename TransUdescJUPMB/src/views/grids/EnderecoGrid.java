@@ -18,13 +18,14 @@ import models.Endereco;
  */
 public class EnderecoGrid extends AbstractGrid{
 
-    public EnderecoGrid(BaseController controller) {
-        super(controller);
+    public EnderecoGrid() {
+        super(new EnderecoController());
     }
 
     @Override
     public String[] getColunas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       String[] colunasCarregamentos = new String[]{"#", "Bairro", "CEP", "Cidade"};
+       return colunasCarregamentos;
     }
     
     

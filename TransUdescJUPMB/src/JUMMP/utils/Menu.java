@@ -12,9 +12,12 @@ import JUMMP.frames.InstanceGridActionsFrame;
 import java.awt.Toolkit;
 import main.Home;
 import views.grids.CarregamentoGrid;
+import views.grids.EnderecoGrid;
 import views.grids.EntregaGrid;
 import views.grids.FilialGrid;
+import views.grids.PessoaFisicaGrid;
 import views.grids.PessoaGrid;
+import views.grids.PessoaJuridicaGrid;
 import views.grids.TransportadoraRedespachoGrid;
 import views.grids.VeiculoGrid;
 import views.grids.VolumeGrid;
@@ -92,6 +95,16 @@ public class Menu extends JFrame {
                 frameEntrega.display();
             }
         });
+        
+        JMenuItem endereco = new JMenuItem("Endereço");
+        endereco.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent action) {
+                InstanceGridActionsFrame frameEntrega = new InstanceGridActionsFrame("Entregas", new EnderecoGrid(), actions);
+                frameEntrega.display();
+            }
+        });
+        
         //abaixo são adicionados todos os itens do menu e seus respectivos
         //listeners para clique com suas ações a serem executadas
         JMenuItem filial = new JMenuItem("Filial");
@@ -108,6 +121,24 @@ public class Menu extends JFrame {
             @Override
             public void actionPerformed(ActionEvent action) {
                 InstanceGridActionsFrame framePessoa = new InstanceGridActionsFrame("Pessoas", new PessoaGrid(), actions);
+                framePessoa.display();
+            }
+        });
+        
+        JMenuItem pessoaFisica = new JMenuItem("Pessoa Fisica");
+        pessoaFisica.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent action) {
+                InstanceGridActionsFrame framePessoa = new InstanceGridActionsFrame("Pessoas Fisicas", new PessoaFisicaGrid(), actions);
+                framePessoa.display();
+            }
+        });
+        
+        JMenuItem pessoaJuridica = new JMenuItem("Pessoa Juridica");
+        pessoaJuridica.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent action) {
+                InstanceGridActionsFrame framePessoa = new InstanceGridActionsFrame("Pessoas Juridicas", new PessoaJuridicaGrid(), actions);
                 framePessoa.display();
             }
         });
@@ -190,8 +221,11 @@ public class Menu extends JFrame {
         
         crudMenu.add(carregamento);
         crudMenu.add(entregaCrud);
+        crudMenu.add(endereco);
         crudMenu.add(filial);
         crudMenu.add(pessoa);
+        crudMenu.add(pessoaFisica);
+        crudMenu.add(pessoaJuridica);
         crudMenu.add(usuario);
         crudMenu.add(veiculo);
         crudMenu.add(volume);
