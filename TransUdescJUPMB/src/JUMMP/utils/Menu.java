@@ -48,7 +48,7 @@ public class Menu extends JFrame {
         //Adiciona a barra de menu ao  frame
         setJMenuBar(menuBar);
 
-        JMenu crudMenu = new JMenu("CRUD");
+        JMenu crudMenu = new JMenu("Cadastros");
         JMenu relatoriosMenu = new JMenu("Relatórios");
         JMenu consultaAdmMenu = new JMenu("Consultas - Administrador");
         JMenu verifVeiculosMenu = new JMenu("Verificar veículos");
@@ -58,13 +58,13 @@ public class Menu extends JFrame {
         JMenuItem sairMenu = new JMenuItem("Sair");
 
         //Coloca na barra de menu
-        menuBar.add(estatisticasMenu);
+        //menuBar.add(estatisticasMenu);
         menuBar.add(crudMenu);
-        menuBar.add(consultaAdmMenu);
-        menuBar.add(verifVeiculosMenu);
-        menuBar.add(cargasMenu);
-        menuBar.add(relatoriosMenu);
-        menuBar.add(consultaEntregaMenu);
+//        menuBar.add(consultaAdmMenu);
+//        menuBar.add(verifVeiculosMenu);
+//        menuBar.add(cargasMenu);
+//        menuBar.add(relatoriosMenu);
+//        menuBar.add(consultaEntregaMenu);
         menuBar.add(sairMenu);
 
         sairMenu.addActionListener(new ActionListener() {
