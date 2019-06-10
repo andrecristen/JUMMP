@@ -196,4 +196,45 @@ public class FormCarregamento extends BaseForm {
 
         super.addFormulario(panelFormulario);
     }
+
+    public JTextField getTextFieldID() {
+        return textFieldID;
+    }
+
+    public void setTextFieldID(JTextField textFieldID) {
+        this.textFieldID = textFieldID;
+    }
+
+    public JComboBox getComboBoxEntrega() {
+        return comboBoxEntrega;
+    }
+
+    public void setComboBoxEntrega(JComboBox comboBoxEntrega) {
+        this.comboBoxEntrega = comboBoxEntrega;
+    }
+
+    public JComboBox getComboBoxEnderecoSaida() {
+        return comboBoxEnderecoSaida;
+    }
+
+    public void setComboBoxEnderecoSaida(JComboBox comboBoxEnderecoSaida) {
+        this.comboBoxEnderecoSaida = comboBoxEnderecoSaida;
+    }
+
+    public JComboBox getComboBoxEnderecoChegada() {
+        return comboBoxEnderecoChegada;
+    }
+
+    public void setComboBoxEnderecoChegada(JComboBox comboBoxEnderecoChegada) {
+        this.comboBoxEnderecoChegada = comboBoxEnderecoChegada;
+    }
+
+    public JTable getTabelaEntregas() {
+        return tabelaEntregas;
+    }
+
+    public void setTabelaEntregas(JTable tabelaEntregas) {
+        this.tabelaEntregas = tabelaEntregas;
+    }
+    
 }
