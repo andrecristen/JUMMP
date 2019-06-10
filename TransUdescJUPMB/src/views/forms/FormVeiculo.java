@@ -30,10 +30,10 @@ public class FormVeiculo extends BaseForm {
     private JTextField textFieldDataAquisicao;
     private JComboBox comboBoxTipo;
     private JComboBox comboBoxStatus;
-    private JPanel panelFormulario;
 
     private GridBagConstraints cons;
-
+    
+    private JPanel panelFormulario;
     private Dimension dimensao;
     private LayoutManager layout;
 
@@ -281,13 +281,4 @@ public class FormVeiculo extends BaseForm {
         this.dimensao = dimensao;
     }
 
-    public LayoutManager getLayout() {
-        return layout;
-    }
-
-    public void setLayout(LayoutManager layout) {
-        this.layout = layout;
-    }
-    
-    
 }

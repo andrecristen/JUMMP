@@ -37,7 +37,7 @@ public class TransportadoraRedespachoGrid extends AbstractGrid{
             case 0:
                 return transRedespacho.getId();
             case 1:
-                return transRedespacho.getPessoaJuridica();
+                return transRedespacho.getPessoaJuridica().getId();
             default:
                 return null;
         }

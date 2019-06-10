@@ -53,14 +53,8 @@ public class TransportadoraRedespachoController extends BaseController {
         try {
             FormTransRedespacho formConcreto = (FormTransRedespacho) view;
             TransportadoraRedespacho modelConcreto = (TransportadoraRedespacho) model;
-
-            //considerar remover os textFields pois são redundantes
             formConcreto.getTextFieldID().setText(Integer.toString(modelConcreto.getId()));
-            formConcreto.getTextFieldCNPJ().setText(Long.toString(modelConcreto.getPessoaJuridica().getCnpj()));
-            formConcreto.getTextFieldIE().setText(modelConcreto.getPessoaJuridica().getIe());
-            formConcreto.getTextFieldNomeFantasia().setText(modelConcreto.getPessoaJuridica().getNomeFantasia());
-
-            formConcreto.getComboBoxPessoaJuridica().setSelectedItem(modelConcreto.getPessoaJuridica());
+            formConcreto.getComboBoxPessoaJuridica().setSelectedItem(modelConcreto.getPessoaJuridica().getId());
             
         } catch (Exception e) {
             new EventMessage(e.getMessage(), EventMessage.getTIPO_ERRO());
