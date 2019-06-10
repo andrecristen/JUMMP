@@ -16,7 +16,7 @@ Todos controllers devem extender ao BaseController.
 Todos forms devem extender ao BaseForm.
 Todos grids devem extender ao AbstractGrid.
 
-##Erros previstos:
+## Erros previstos:
 - Form em branco ao abrir: Remover métodos getLayout() e setLayout(); 
 
 Os icones a serem usadas nas actions devem inseridos na pasta JUMMP.icons, e 
