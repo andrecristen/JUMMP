@@ -29,7 +29,6 @@ public class FormTransRedespacho extends BaseForm {
 
     private JTextField textFieldID;
     private JTextField textFieldNome;
-    private JTextField textFieldPessoaID;
     private JComboBox comboBoxPessoaJuridica;
     private JTextField textFieldSobrenome;
     private JTextField textFieldNomeFantasia;
@@ -83,7 +82,6 @@ public class FormTransRedespacho extends BaseForm {
 
         textFieldID = new JTextField();
         comboBoxPessoaJuridica = new JComboBox();
-        textFieldPessoaID = new JTextField();
         textFieldNome = new JTextField();
         textFieldSobrenome = new JTextField();
         textFieldNomeFantasia = new JTextField();
@@ -92,19 +90,164 @@ public class FormTransRedespacho extends BaseForm {
 
         textFieldID.setEditable(false);
 
-        textFieldPessoaID.setEditable(false);
-        textFieldNome.setEditable(false);
-        textFieldSobrenome.setEditable(false);
-        textFieldNomeFantasia.setEditable(false);
-        textFieldCNPJ.setEditable(false);
-        textFieldIE.setEditable(false);
-
         layout = new GridBagLayout();
 
         panelFormulario = new JPanel();
         panelFormulario.setLayout(layout);
     }
 
+    public JLabel getLabelID() {
+        return labelID;
+    }
+
+    public void setLabelID(JLabel labelID) {
+        this.labelID = labelID;
+    }
+
+    public JLabel getLabelNome() {
+        return labelNome;
+    }
+
+    public void setLabelNome(JLabel labelNome) {
+        this.labelNome = labelNome;
+    }
+
+    public JLabel getLabelSobrenome() {
+        return labelSobrenome;
+    }
+
+    public void setLabelSobrenome(JLabel labelSobrenome) {
+        this.labelSobrenome = labelSobrenome;
+    }
+
+    public JLabel getLabelNomeFantasia() {
+        return labelNomeFantasia;
+    }
+
+    public void setLabelNomeFantasia(JLabel labelNomeFantasia) {
+        this.labelNomeFantasia = labelNomeFantasia;
+    }
+
+    public JLabel getLabelCNPJ() {
+        return labelCNPJ;
+    }
+
+    public void setLabelCNPJ(JLabel labelCNPJ) {
+        this.labelCNPJ = labelCNPJ;
+    }
+
+    public JLabel getLabelPessoaJuridica() {
+        return labelPessoaJuridica;
+    }
+
+    public void setLabelPessoaJuridica(JLabel labelPessoaJuridica) {
+        this.labelPessoaJuridica = labelPessoaJuridica;
+    }
+
+    public JLabel getLabelPessoaID() {
+        return labelPessoaID;
+    }
+
+    public void setLabelPessoaID(JLabel labelPessoaID) {
+        this.labelPessoaID = labelPessoaID;
+    }
+
+    public JLabel getLabelIE() {
+        return labelIE;
+    }
+
+    public void setLabelIE(JLabel labelIE) {
+        this.labelIE = labelIE;
+    }
+
+    public JLabel getLabelSelecione() {
+        return labelSelecione;
+    }
+
+    public void setLabelSelecione(JLabel labelSelecione) {
+        this.labelSelecione = labelSelecione;
+    }
+
+    public JTextField getTextFieldNome() {
+        return textFieldNome;
+    }
+
+    public void setTextFieldNome(JTextField textFieldNome) {
+        this.textFieldNome = textFieldNome;
+    }
+
+    public JComboBox getComboBoxPessoaJuridica() {
+        return comboBoxPessoaJuridica;
+    }
+
+    public void setComboBoxPessoaJuridica(JComboBox comboBoxPessoaJuridica) {
+        this.comboBoxPessoaJuridica = comboBoxPessoaJuridica;
+    }
+
+    public JTextField getTextFieldSobrenome() {
+        return textFieldSobrenome;
+    }
+
+    public void setTextFieldSobrenome(JTextField textFieldSobrenome) {
+        this.textFieldSobrenome = textFieldSobrenome;
+    }
+
+    public JTextField getTextFieldNomeFantasia() {
+        return textFieldNomeFantasia;
+    }
+
+    public void setTextFieldNomeFantasia(JTextField textFieldNomeFantasia) {
+        this.textFieldNomeFantasia = textFieldNomeFantasia;
+    }
+
+    public JTextField getTextFieldCNPJ() {
+        return textFieldCNPJ;
+    }
+
+    public void setTextFieldCNPJ(JTextField textFieldCNPJ) {
+        this.textFieldCNPJ = textFieldCNPJ;
+    }
+
+    public JTextField getTextFieldIE() {
+        return textFieldIE;
+    }
+
+    public void setTextFieldIE(JTextField textFieldIE) {
+        this.textFieldIE = textFieldIE;
+    }
+
+    public GridBagConstraints getCons() {
+        return cons;
+    }
+
+    public void setCons(GridBagConstraints cons) {
+        this.cons = cons;
+    }
+
+    public JPanel getPanelFormulario() {
+        return panelFormulario;
+    }
+
+    public void setPanelFormulario(JPanel panelFormulario) {
+        this.panelFormulario = panelFormulario;
+    }
+
+    public Dimension getDimensao() {
+        return dimensao;
+    }
+
+    public void setDimensao(Dimension dimensao) {
+        this.dimensao = dimensao;
+    }
+
+    public LayoutManager getLayout() {
+        return layout;
+    }
+
+    public void setLayout(LayoutManager layout) {
+        this.layout = layout;
+    }
+ 
     private void addComponents() {
         cons = new GridBagConstraints();
         cons.gridx = 0;
@@ -163,7 +306,6 @@ public class FormTransRedespacho extends BaseForm {
         cons.gridwidth = 1;
         cons.ipadx = 200;
         cons.fill = GridBagConstraints.HORIZONTAL;
-        panelFormulario.add(textFieldPessoaID, cons);
 
         cons = new GridBagConstraints();
         cons.gridx = 0;
@@ -252,4 +394,13 @@ public class FormTransRedespacho extends BaseForm {
 
         super.addFormulario(panelFormulario);
     }
+
+    public JTextField getTextFieldID() {
+        return textFieldID;
+    }
+
+    public void setTextFieldID(JTextField textFieldID) {
+        this.textFieldID = textFieldID;
+    }
+    
 }

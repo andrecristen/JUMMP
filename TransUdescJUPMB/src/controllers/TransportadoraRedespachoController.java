@@ -6,11 +6,10 @@
 package controllers;
 
 import JUMMP.controllers.BaseController;
-import java.util.ArrayList;
-import java.util.List;
-import models.Endereco;
 import models.TransportadoraRedespacho;
 import JUMMP.forms.BaseForm;
+import JUMMP.utils.EventMessage;
+import models.PessoaJuridica;
 import views.forms.FormTransRedespacho;
 
 /**
@@ -31,12 +30,41 @@ public class TransportadoraRedespachoController extends BaseController {
 
     @Override
     public Object beanModel() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            TransportadoraRedespacho transRedespacho = new TransportadoraRedespacho();
+            FormTransRedespacho formConcreto = (FormTransRedespacho) parameters;
+            if (!formConcreto.getTextFieldID().getText().isEmpty()) {
+                transRedespacho.setId(Integer.parseInt(formConcreto.getTextFieldID().getText()));
+            }
+            PessoaJuridicaController pjc = new PessoaJuridicaController();
+            PessoaJuridica pessoaEcontrada = (PessoaJuridica) pjc.findById(Integer.parseInt(formConcreto.getComboBoxPessoaJuridica().getSelectedItem().toString()));
+            transRedespacho.setPessoaJuridica(pessoaEcontrada);
+
+            return transRedespacho;
+
+        } catch (Exception e) {
+            new EventMessage(e.getMessage(), EventMessage.getTIPO_ERRO());
+        }
+        return null;
     }
-    
+
     @Override
     public void beanForm(BaseForm view, Object model) {
+        try {
+            FormTransRedespacho formConcreto = (FormTransRedespacho) view;
+            TransportadoraRedespacho modelConcreto = (TransportadoraRedespacho) model;
 
+            //considerar remover os textFields pois são redundantes
+            formConcreto.getTextFieldID().setText(Integer.toString(modelConcreto.getId()));
+            formConcreto.getTextFieldCNPJ().setText(Long.toString(modelConcreto.getPessoaJuridica().getCnpj()));
+            formConcreto.getTextFieldIE().setText(modelConcreto.getPessoaJuridica().getIe());
+            formConcreto.getTextFieldNomeFantasia().setText(modelConcreto.getPessoaJuridica().getNomeFantasia());
+
+            formConcreto.getComboBoxPessoaJuridica().setSelectedItem(modelConcreto.getPessoaJuridica());
+            
+        } catch (Exception e) {
+            new EventMessage(e.getMessage(), EventMessage.getTIPO_ERRO());
+        }
     }
-    
 }
+

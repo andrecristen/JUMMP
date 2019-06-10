@@ -25,6 +25,10 @@ public class TransportadoraRedespacho {
     public void setPessoaJuridica(PessoaJuridica pessoaJuridica) {
         this.pessoaJuridica = pessoaJuridica;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     
     
 }
