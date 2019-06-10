@@ -28,9 +28,6 @@ public class CarregamentoController extends BaseController {
         return new FormCarregamento(this.getAction());
     }
 
-    // PessoaController pessoaController = new PessoaController();
-    //  Pessoa pessoaEcontrada = (Pessoa) pessoaController.findById(Integer.parseInt(formConcreto.getComboBoxPessoa().getSelectedItem().toString()));
-    // usuario.setPessoa(pessoaEcontrada);
     @Override
     public Object beanModel() {
         try {
@@ -57,14 +54,6 @@ public class CarregamentoController extends BaseController {
     @Override
     public void beanForm(BaseForm view, Object model) {
        try {
-           // FormUsuario formConcreto = (FormUsuario) view;
-           // Usuario modelConcreto = (Usuario) model;
-           // formConcreto.getTextFieldID().setText(Integer.toString(modelConcreto.getId()));
-            //formConcreto.getTextFieldLogin().setText(modelConcreto.getLogin());
-            //formConcreto.getTextFieldSenha().setText(modelConcreto.getSenha());
-            //formConcreto.getComboBoxTipo().setSelectedItem(modelConcreto.getTipo());
-           // formConcreto.getComboBoxPessoa().setSelectedItem(modelConcreto.getPessoa().getId());
-           // formConcreto.repaint();
            FormCarregamento formCarregamento = (FormCarregamento) view;
            Carregamento modelCarregamento = (Carregamento) model;
            formCarregamento.getTextFieldID().setText(Integer.toString(modelCarregamento.getId()));

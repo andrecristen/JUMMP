@@ -215,4 +215,55 @@ public class FormEntrega extends BaseForm {
 
         super.addFormulario(panelFormulario);
     }
+
+    public JTextField getTextFieldID() {
+        return textFieldID;
+    }
+
+    public void setTextFieldID(JTextField textFieldID) {
+        this.textFieldID = textFieldID;
+    }
+
+    public JComboBox getComboBoxEnderecoDestino() {
+        return comboBoxEnderecoDestino;
+    }
+
+    public void setComboBoxEnderecoDestino(JComboBox comboBoxEnderecoDestino) {
+        this.comboBoxEnderecoDestino = comboBoxEnderecoDestino;
+    }
+
+    public JComboBox getComboBoxSituacao() {
+        return comboBoxSituacao;
+    }
+
+    public void setComboBoxSituacao(JComboBox comboBoxSituacao) {
+        this.comboBoxSituacao = comboBoxSituacao;
+    }
+
+    public JComboBox getComboBoxVolume() {
+        return comboBoxVolume;
+    }
+
+    public void setComboBoxVolume(JComboBox comboBoxVolume) {
+        this.comboBoxVolume = comboBoxVolume;
+    }
+
+    public JComboBox getComboBoxRedespacho() {
+        return comboBoxRedespacho;
+    }
+
+    public void setComboBoxRedespacho(JComboBox comboBoxRedespacho) {
+        this.comboBoxRedespacho = comboBoxRedespacho;
+    }
+
+    public JTable getTabelaVolumes() {
+        return tabelaVolumes;
+    }
+
+    public void setTabelaVolumes(JTable tabelaVolumes) {
+        this.tabelaVolumes = tabelaVolumes;
+    }
+    
+    
+    
 }
