@@ -8,6 +8,7 @@ package views.forms;
 import JUMMP.forms.BaseForm;
 import JUMMP.utils.Action;
 import controllers.CarregamentoController;
+import controllers.EnderecoController;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
@@ -85,10 +86,12 @@ public class FormCarregamento extends BaseForm {
         comboBoxEntrega = new JComboBox();
 
         //fill data com enderecos
-        comboBoxEnderecoSaida = new JComboBox();
+        EnderecoController enderecoController = new EnderecoController();
+        enderecoController.setIdentificadorGetMethod("getId");
+        comboBoxEnderecoSaida = new JComboBox(enderecoController.getModelList());
 
         //fill data com enderecos
-        comboBoxEnderecoChegada = new JComboBox();
+        comboBoxEnderecoChegada = new JComboBox(enderecoController.getModelList());
 
         textFieldID.setEditable(false);
 

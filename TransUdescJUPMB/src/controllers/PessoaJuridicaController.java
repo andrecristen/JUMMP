@@ -8,6 +8,7 @@ package controllers;
 import JUMMP.controllers.BaseController;
 import JUMMP.forms.BaseForm;
 import JUMMP.utils.EventMessage;
+import models.Pessoa;
 import models.PessoaJuridica;
 import views.forms.FormPessoaJuridica;
 
@@ -31,9 +32,18 @@ public class PessoaJuridicaController extends BaseController {
     @Override
     public Object beanModel() {
         try {
-            PessoaJuridica pessoa = new PessoaJuridica();
+            PessoaJuridica pessoaJuridica = new PessoaJuridica();
             FormPessoaJuridica formConcreto = (FormPessoaJuridica) parameters;
-            return pessoa;
+            if (!formConcreto.getTextFieldID().getText().isEmpty()) {
+                pessoaJuridica.setId(Integer.parseInt(formConcreto.getTextFieldID().getText()));
+            }
+            pessoaJuridica.setCnpj(Long.parseLong(formConcreto.getTextFieldCNPJ().getText()));
+            pessoaJuridica.setIe(formConcreto.getTextFieldIE().getText());
+            pessoaJuridica.setNomeFantasia(formConcreto.getTextFieldNomeFantasia().getText());
+            PessoaController pessoaController = new PessoaController();
+            Pessoa pessoaEcontrada = (Pessoa) pessoaController.findById(Integer.parseInt(formConcreto.getComboBoxPessoa().getSelectedItem().toString()));
+            pessoaJuridica.setPessoa(pessoaEcontrada);
+            return pessoaJuridica;
         } catch (Exception exception) {
             new EventMessage(exception.getMessage(), EventMessage.getTIPO_ERRO());
         }
@@ -45,6 +55,11 @@ public class PessoaJuridicaController extends BaseController {
         try {
             FormPessoaJuridica formConcreto = (FormPessoaJuridica) view;
             PessoaJuridica modelConcreto = (PessoaJuridica) model;
+            formConcreto.getTextFieldCNPJ().setText(Long.toString(modelConcreto.getCnpj()));
+            formConcreto.getTextFieldIE().setText(modelConcreto.getIe());
+            formConcreto.getTextFieldNomeFantasia().setText(modelConcreto.getNomeFantasia());
+            formConcreto.getTextFieldID().setText(Integer.toString(modelConcreto.getId()));
+            formConcreto.getComboBoxPessoa().setSelectedItem(modelConcreto.getPessoa().getId());
             formConcreto.repaint();
         } catch (Exception exception) {
             new EventMessage(exception.getMessage(), EventMessage.getTIPO_ERRO());
