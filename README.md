@@ -9,7 +9,7 @@ localizado em JUMMP/imports.
 - javax.persistence.jar
 - postgresql-42.2.2.jar
 
-- Adicionar biblioteca padrão EclipsLink 
+- Adicionar biblioteca padrão EclipseLink 
 
 ## Configurações:
 
