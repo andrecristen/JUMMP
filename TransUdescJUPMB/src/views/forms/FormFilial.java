@@ -38,7 +38,7 @@ public class FormFilial extends BaseForm {
     private LayoutManager layout;
 
     public FormFilial(Action action) {
-        super("Formulário Filial", new Dimension(400, 200), new FilialController(), action);
+        super("Formulário Filial", new Dimension(400, 200), action);
 
         initComponents();
         addComponents();

@@ -5,8 +5,10 @@
  */
 package JUMMP.utils;
 
+import JUMMP.controllers.BaseController;
 import JUMMP.grids.AbstractGrid;
 import java.util.ArrayList;
+import java.util.List;
 import models.TipoUsuario;
 
 /**
@@ -43,6 +45,8 @@ public class Action {
     protected String icon;
 
     protected Object params;
+
+    protected BaseController controller;
 
     protected AbstractGrid gridCallRefresh;
 
@@ -185,5 +189,13 @@ public class Action {
 
     public void setPermissions(ArrayList<TipoUsuario> permissions) {
         this.permissions = permissions;
+    }
+
+    public BaseController getController() {
+        return controller;
+    }
+
+    public void setController(BaseController controller) {
+        this.controller = controller;
     }
 }

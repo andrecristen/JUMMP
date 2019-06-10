@@ -32,20 +32,21 @@ public class ActionsPanel extends JPanel {
     private Dimension dimensaoPainel;
     private Container parent;
 
-    public ActionsPanel(Container parent, BaseController controller, JTable tableGrid, List<Action> actions, AbstractGrid grid) {
+    public ActionsPanel(Container parent,JTable tableGrid, List<Action> actions, AbstractGrid grid) {
         this.parent = parent;
         this.tableGrid = tableGrid;
         this.actionsButton = new ArrayList<>();
-        initComponents(controller, actions, grid);
+        initComponents(actions, grid);
         addComponents();
         super.setVisible(true);
         super.setSize(dimensaoPainel);
     }
 
-    private void initComponents(BaseController controller, List<Action> actions, AbstractGrid grid) {
+    private void initComponents(List<Action> actions, AbstractGrid grid) {
         dimensaoBotao = new Dimension(100, 20);
         dimensaoPainel = new Dimension(parent.getWidth(), 30);
         for (Action action : actions) {
+            BaseController controller = action.getController();
             action.setGridCallRefresh(grid);
             JButton buttonAction = new JButton(action.getTitle());
             buttonAction.setSize(dimensaoBotao);

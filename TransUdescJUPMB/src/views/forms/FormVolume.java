@@ -34,7 +34,7 @@ public class FormVolume extends BaseForm {
     private LayoutManager layout;
 
     public FormVolume(Action action) {
-        super("Formulário Volume", new Dimension(400, 250), new VolumeController(), action);
+        super("Formulário Volume", new Dimension(400, 250), action);
 
         initComponents();
         addComponents();
@@ -178,5 +178,5 @@ public class FormVolume extends BaseForm {
     public void setTextFieldCubagem(JTextField textFieldCubagem) {
         this.textFieldCubagem = textFieldCubagem;
     }
-    
+
 }

@@ -15,9 +15,8 @@ import javax.swing.JPanel;
  * @author Andre Cristen
  */
 public class BaseForm extends JFrame {
-    
+
     private Object objeto;
-    private BaseController controller;
     private Action actionPersist;
     private JPanel basePanel;
     private JPanel formPanel;
@@ -25,18 +24,18 @@ public class BaseForm extends JFrame {
     private LayoutManager layout;
     private Dimension dimensao;
 
-    public BaseForm(String titulo, Dimension dimensao, BaseController controller, Action action) {
+    public BaseForm(String titulo, Dimension dimensao, Action action) {
         super(titulo);
         this.dimensao = dimensao;
         this.actionPersist = action;
-        initComponents(controller);
+        initComponents();
         addComponents();
     }
 
-    private void initComponents(BaseController controller) {
+    private void initComponents() {
         basePanel = new JPanel();
         this.setSize(dimensao);
-        formPanel = new FormPanel(this, controller);
+        formPanel = new FormPanel(this, this.actionPersist.getController());
         layout = new BorderLayout();
         basePanel.setLayout(layout);
     }
@@ -49,8 +48,8 @@ public class BaseForm extends JFrame {
     public void addFormulario(Container container) {
         basePanel.add(container, BorderLayout.CENTER);
     }
-    
-    public void run(){
+
+    public void run() {
         this.setVisible(true);
     }
 
@@ -60,14 +59,6 @@ public class BaseForm extends JFrame {
 
     public void setObjeto(Object objeto) {
         this.objeto = objeto;
-    }
-
-    public BaseController getController() {
-        return controller;
-    }
-
-    public void setController(BaseController controller) {
-        this.controller = controller;
     }
 
     public Action getActionPersist() {

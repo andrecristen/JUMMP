@@ -37,7 +37,7 @@ public class FormPessoaFisica extends BaseForm {
     private LayoutManager layout;
 
     public FormPessoaFisica(Action action) {
-        super("Formulário Pessoa Física", new Dimension(500, 300), new PessoaFisicaController(), action);
+        super("Formulário Pessoa Física", new Dimension(500, 300), action);
 
         initComponents();
         addComponents();

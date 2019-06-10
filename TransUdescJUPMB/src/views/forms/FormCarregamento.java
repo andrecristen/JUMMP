@@ -54,7 +54,7 @@ public class FormCarregamento extends BaseForm {
     private LayoutManager layout;
 
     public FormCarregamento(Action action) {
-        super("Formulário Carregamento", new Dimension(450, 500), new CarregamentoController(), action);
+        super("Formulário Carregamento", new Dimension(450, 500), action);
         initComponents();
         addComponents();
     }

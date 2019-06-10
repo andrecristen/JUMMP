@@ -29,7 +29,7 @@ public class FormPessoa extends BaseForm {
     private LayoutManager layout;
 
     public FormPessoa(Action action) {
-        super("Formulário Pessoa Física", new Dimension(400, 260), new PessoaController(), action);
+        super("Formulário Pessoa Física", new Dimension(400, 260), action);
 
         initComponents();
         addComponents();

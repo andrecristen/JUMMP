@@ -42,7 +42,7 @@ public class FormEndereco extends BaseForm {
     private LayoutManager layout;
 
     public FormEndereco(Action action) {
-        super("Formulário Endereço", new Dimension(450, 350), new EnderecoController(), action);
+        super("Formulário Endereço", new Dimension(450, 350), action);
 
         initComponents();
         addComponents();

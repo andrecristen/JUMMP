@@ -45,7 +45,7 @@ public class FormEntrega extends BaseForm {
     private LayoutManager layout;
 
     public FormEntrega(Action action) {
-        super("Formulário Entrega", new Dimension(750, 550), new EntregaController(), action);
+        super("Formulário Entrega", new Dimension(750, 550), action);
 
         initComponents();
         addComponents();

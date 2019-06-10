@@ -32,7 +32,7 @@ public class FormTransRedespacho extends BaseForm {
     private LayoutManager layout;
 
     public FormTransRedespacho(Action action) {
-        super("Formulário Transportadora Redespacho", new Dimension(400, 400), new TransportadoraRedespachoController(), action);
+        super("Formulário Transportadora Redespacho", new Dimension(400, 400), action);
 
         initComponents();
         addComponents();

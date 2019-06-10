@@ -36,7 +36,7 @@ public class FormTrackingEntrega extends BaseForm {
     private LayoutManager layout;
 
     public FormTrackingEntrega(Action action) {
-        super("Formulário Tracking de Entrega", new Dimension(400, 250), new TrackingEntregaController(), action);
+        super("Formulário Tracking de Entrega", new Dimension(400, 250), action);
 
         initComponents();
         addComponents();

@@ -38,7 +38,7 @@ public class FormUsuario extends BaseForm {
     private LayoutManager layout;
 
     public FormUsuario(Action action) {
-        super("Formulário Usuário", new Dimension(450, 300), new UsuarioController(), action);
+        super("Formulário Usuário", new Dimension(450, 300), action);
 
         initComponents();
         addComponents();

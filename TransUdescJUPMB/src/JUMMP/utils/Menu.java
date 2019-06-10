@@ -9,6 +9,17 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import JUMMP.frames.InstanceGridActionsFrame;
+import controllers.CarregamentoController;
+import controllers.EnderecoController;
+import controllers.EntregaController;
+import controllers.FilialController;
+import controllers.PessoaController;
+import controllers.PessoaFisicaController;
+import controllers.PessoaJuridicaController;
+import controllers.TransportadoraRedespachoController;
+import controllers.UsuarioController;
+import controllers.VeiculoController;
+import controllers.VolumeController;
 import java.awt.Toolkit;
 import main.Home;
 import views.grids.CarregamentoGrid;
@@ -30,11 +41,7 @@ import views.grids.UsuarioGrid;
 public class Menu extends JFrame {
 
     public Menu() {
-        ArrayList<Action> actions = new ArrayList<>();
-        actions.add(new Action("Adicionar", "add", "addPersist", false, false, "addIcon.png"));
-        actions.add(new Action("Editar", "edit", "editPersist", true, false, "editIcon.png"));
-        actions.add(new Action("Visualizar", "view", "", true, false, "findIcon.png"));
-        actions.add(new Action("Excluir", "delete", "", true, true, "removeIcon.png"));
+        ActionUtils actionUtils = new ActionUtils();
 
         setTitle(Home.getSystemName());
         Toolkit t = Toolkit.getDefaultToolkit();
@@ -82,7 +89,7 @@ public class Menu extends JFrame {
         carregamento.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent action) {
-                InstanceGridActionsFrame frameCarregamento = new InstanceGridActionsFrame("Carregamentos", new CarregamentoGrid(), actions);
+                InstanceGridActionsFrame frameCarregamento = new InstanceGridActionsFrame("Carregamentos", new CarregamentoGrid(), actionUtils.createCRUDActions(new CarregamentoController()));
                 frameCarregamento.display();
             }
         });
@@ -91,7 +98,7 @@ public class Menu extends JFrame {
         entregaCrud.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent action) {
-                InstanceGridActionsFrame frameEntrega = new InstanceGridActionsFrame("Entregas", new EntregaGrid(), actions);
+                InstanceGridActionsFrame frameEntrega = new InstanceGridActionsFrame("Entregas", new EntregaGrid(), actionUtils.createCRUDActions(new EntregaController()));
                 frameEntrega.display();
             }
         });
@@ -100,7 +107,7 @@ public class Menu extends JFrame {
         endereco.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent action) {
-                InstanceGridActionsFrame frameEntrega = new InstanceGridActionsFrame("Entregas", new EnderecoGrid(), actions);
+                InstanceGridActionsFrame frameEntrega = new InstanceGridActionsFrame("Endereco", new EnderecoGrid(), actionUtils.createCRUDActions(new EnderecoController()));
                 frameEntrega.display();
             }
         });
@@ -111,7 +118,7 @@ public class Menu extends JFrame {
         filial.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent action) {
-                InstanceGridActionsFrame frameFilial = new InstanceGridActionsFrame("Filiais", new FilialGrid(), actions);
+                InstanceGridActionsFrame frameFilial = new InstanceGridActionsFrame("Filiais", new FilialGrid(), actionUtils.createCRUDActions(new FilialController()));
                 frameFilial.display();
             }
         });
@@ -120,7 +127,7 @@ public class Menu extends JFrame {
         pessoa.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent action) {
-                InstanceGridActionsFrame framePessoa = new InstanceGridActionsFrame("Pessoas", new PessoaGrid(), actions);
+                InstanceGridActionsFrame framePessoa = new InstanceGridActionsFrame("Pessoas", new PessoaGrid(), actionUtils.createCRUDActions(new PessoaController()));
                 framePessoa.display();
             }
         });
@@ -129,7 +136,7 @@ public class Menu extends JFrame {
         pessoaFisica.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent action) {
-                InstanceGridActionsFrame framePessoa = new InstanceGridActionsFrame("Pessoas Fisicas", new PessoaFisicaGrid(), actions);
+                InstanceGridActionsFrame framePessoa = new InstanceGridActionsFrame("Pessoas Fisicas", new PessoaFisicaGrid(), actionUtils.createCRUDActions(new PessoaFisicaController()));
                 framePessoa.display();
             }
         });
@@ -138,7 +145,7 @@ public class Menu extends JFrame {
         pessoaJuridica.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent action) {
-                InstanceGridActionsFrame framePessoa = new InstanceGridActionsFrame("Pessoas Juridicas", new PessoaJuridicaGrid(), actions);
+                InstanceGridActionsFrame framePessoa = new InstanceGridActionsFrame("Pessoas Juridicas", new PessoaJuridicaGrid(), actionUtils.createCRUDActions(new PessoaJuridicaController()));
                 framePessoa.display();
             }
         });
@@ -147,7 +154,7 @@ public class Menu extends JFrame {
         usuario.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent action) {
-                InstanceGridActionsFrame frameUsuario = new InstanceGridActionsFrame("Usuário", new UsuarioGrid(), actions);
+                InstanceGridActionsFrame frameUsuario = new InstanceGridActionsFrame("Usuário", new UsuarioGrid(), actionUtils.createCRUDActions(new UsuarioController()));
                 frameUsuario.display();
             }
         });
@@ -156,7 +163,7 @@ public class Menu extends JFrame {
         veiculo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent action) {
-                InstanceGridActionsFrame frameVeiculo = new InstanceGridActionsFrame("Veiculos", new VeiculoGrid(), actions);
+                InstanceGridActionsFrame frameVeiculo = new InstanceGridActionsFrame("Veiculos", new VeiculoGrid(), actionUtils.createCRUDActions(new VeiculoController()));
                 frameVeiculo.display();
             }
         });
@@ -165,7 +172,7 @@ public class Menu extends JFrame {
         volume.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent action) {
-                InstanceGridActionsFrame frameVolume = new InstanceGridActionsFrame("Volume", new VolumeGrid(), actions);
+                InstanceGridActionsFrame frameVolume = new InstanceGridActionsFrame("Volume", new VolumeGrid(), actionUtils.createCRUDActions(new VolumeController()));
                 frameVolume.display();
             }
         });
@@ -189,7 +196,7 @@ public class Menu extends JFrame {
         entregas.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent action) {
-                InstanceGridActionsFrame frameEntrega = new InstanceGridActionsFrame("Entregas", new EntregaGrid(), actions);
+                InstanceGridActionsFrame frameEntrega = new InstanceGridActionsFrame("Entregas", new EntregaGrid(), actionUtils.createCRUDActions(new EntregaController()));
                 frameEntrega.display();
             }
         });
@@ -208,7 +215,7 @@ public class Menu extends JFrame {
         transportadora.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent action) {
-                InstanceGridActionsFrame frameRedespacho = new InstanceGridActionsFrame("Transportadoras Redespacho", new TransportadoraRedespachoGrid(), actions);
+                InstanceGridActionsFrame frameRedespacho = new InstanceGridActionsFrame("Transportadoras Redespacho", new TransportadoraRedespachoGrid(), actionUtils.createCRUDActions(new TransportadoraRedespachoController()));
                 frameRedespacho.display();
             }
         });

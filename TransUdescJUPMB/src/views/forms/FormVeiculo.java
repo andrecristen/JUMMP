@@ -38,7 +38,7 @@ public class FormVeiculo extends BaseForm {
     private LayoutManager layout;
 
     public FormVeiculo(Action action) {
-        super("Formulário Veiculo", new Dimension(450, 300), new VeiculoController(), action);
+        super("Formulário Veiculo", new Dimension(450, 300), action);
 
         initComponents();
         addComponents();

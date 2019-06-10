@@ -35,7 +35,7 @@ public class FormTrakingCarregamento extends BaseForm {
     private LayoutManager layout;
 
     public FormTrakingCarregamento(Action action) {
-        super("Formulário Tracking de Carregamento", new Dimension(400, 250), new TrackingCarregamentoController(), action);
+        super("Formulário Tracking de Carregamento", new Dimension(400, 250), action);
 
         initComponents();
         addComponents();
