@@ -9,7 +9,15 @@ localizado em JUMMP/imports.
 - javax.persistence.jar
 - postgresql-42.2.2.jar
 
-- Adicionar biblioteca padrão EclipseLink (JPA 2.1)
+- Adicionar biblioteca padrão EclipseLink (JPA 2.1);
+
+## JUMMP.authorization
+ Requerimentos para funcionamento do authorization:
+ 
+ - Modelo chamado Usuario, com id, login, senha e TipoUsuario;
+ - Enum TipoUsuario, com todos os tipos de usuários que o sistema comporta;
+ - Named Query com nome de validarLogin Exemplo: 
+      * @NamedQueries(@NamedQuery(name="validarLogin",query="SELECT user FROM Usuario user WHERE user.login = ?1 AND user.senha = ?2")).
 
 ## Configurações:
 
@@ -39,6 +47,3 @@ O sistema contará com os seguintes módulos.
  - **Gestor**: Fornece visualizações destinadas ao gerente da empresa, com consultas e gráficos relacionadas a empresa.
  
  ## Status: Em desenvolvimento
-
-
-
