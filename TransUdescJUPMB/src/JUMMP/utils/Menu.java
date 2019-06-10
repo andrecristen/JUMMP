@@ -38,12 +38,12 @@ import views.grids.UsuarioGrid;
 /**
  *
  * @author Lucas Levi Gonçalves
+ * @author Andre Cristen
  */
 public class Menu extends JFrame {
 
     public Menu() {
         ActionUtils actionUtils = new ActionUtils();
-       // ArrayList<TipoUsuario> permiteAll = actionUtils.permiteAllTypes();
         ArrayList<TipoUsuario> excetoCliente = new ArrayList<>();
         excetoCliente.add(TipoUsuario.CLIENTE);
         ArrayList<TipoUsuario> permiteAll = actionUtils.permiteAllTypesExcept(excetoCliente);
