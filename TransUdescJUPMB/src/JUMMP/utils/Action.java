@@ -8,7 +8,6 @@ package JUMMP.utils;
 import JUMMP.controllers.BaseController;
 import JUMMP.grids.AbstractGrid;
 import java.util.ArrayList;
-import java.util.List;
 import models.TipoUsuario;
 
 /**
@@ -16,15 +15,17 @@ import models.TipoUsuario;
  * de form, grid, confirmacoes de form entre outros.
  *
  * Action Grid = Acao a ser chamada quando clicarmos em um botao localizado em
- * um grid Exemplo: add Action Form = Acao a ser chamada quando clicarmos em um
- * botao localizado em um form Exemplo: addPersist Needs Target = Necessita de
- * uma linha selecionada no grid para funcionar? Needs Confirm = Ncessita uma
- * mensagem de confirmacao antes de realemte executar a acao? Message Confirm =
- * Caso necessite da anterior, qual a mensagem? Title = Titulo da acao Path Icon
- * = Path do icone a ser usado nos botoes caso tiver Params = Caso precisar de
- * algum parametro adicional. Grid Call Refresh = Grid que pode ser recarregado
- * após a execução da action. Permissions = Tipos de usuários que tem acesso a
- * essa ação.
+ * um grid Exemplo: add 
+ * Action Form = Acao a ser chamada quando clicarmos em um
+ * botao localizado em um form Exemplo: addPersist 
+ * Needs Target = Necessita de uma linha selecionada no grid para funcionar? 
+ * Needs Confirm = Ncessita uma  mensagem de confirmacao antes de realemte executar a acao? 
+ * Message Confirm = Caso necessite da anterior, qual a mensagem? 
+ * Title = Titulo da acao 
+ * Path Icon = Path do icone a ser usado nos botoes caso tiver 
+ * Params = Caso precisar de algum parametro adicional. 
+ * Grid Call Refresh = Grid que pode ser recarregado após a execução da action. 
+ * Permissions = Tipos de usuários que tem acesso a essa ação.
  *
  * @author Andre Cristen
  */
@@ -62,13 +63,14 @@ public class Action {
      * @param needsConfirm
      * @param icon
      */
-    public Action(String title, String actionGrid, String actionForm, boolean needsTarget, boolean needsConfirm, String icon) {
+    public Action(String title, String actionGrid, String actionForm, boolean needsTarget, boolean needsConfirm, String icon, ArrayList<TipoUsuario> permissions) {
         this.title = title;
         this.actionGrid = actionGrid;
         this.actionForm = actionForm;
         this.needsTarget = needsTarget;
         this.needsConfirm = needsConfirm;
         this.icon = icon;
+        this.permissions = permissions;
         this.messageConfirm = "Tem certeza que deseja realmente processar a operação para este registro?";
     }
 
@@ -81,34 +83,14 @@ public class Action {
      * @param needsConfirm
      * @param title
      */
-    public Action(String title, String actionGrid, String actionForm, boolean needsTarget, boolean needsConfirm) {
+    public Action(String title, String actionGrid, String actionForm, boolean needsTarget, boolean needsConfirm, ArrayList<TipoUsuario> permissions) {
         this.actionGrid = actionGrid;
         this.actionForm = actionForm;
         this.needsTarget = needsTarget;
         this.needsConfirm = needsConfirm;
         this.title = title;
-        this.messageConfirm = "Tem certeza que deseja realmente processar a operação para este registro?";
-    }
-
-    /**
-     * Com permissoes
-     *
-     * @param actionGrid
-     * @param actionForm
-     * @param needsTarget
-     * @param needsConfirm
-     * @param title
-     * @param icon
-     * @param permissions
-     */
-    public Action(String title, String actionGrid, String actionForm, boolean needsTarget, boolean needsConfirm, String icon, ArrayList<TipoUsuario> permissions) {
-        this.actionGrid = actionGrid;
-        this.actionForm = actionForm;
-        this.needsTarget = needsTarget;
-        this.needsConfirm = needsConfirm;
-        this.title = title;
-        this.icon = icon;
         this.permissions = permissions;
+        this.messageConfirm = "Tem certeza que deseja realmente processar a operação para este registro?";
     }
 
     public String getActionGrid() {

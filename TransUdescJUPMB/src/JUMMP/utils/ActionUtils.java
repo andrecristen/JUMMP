@@ -7,44 +7,62 @@ package JUMMP.utils;
 
 import JUMMP.controllers.BaseController;
 import java.util.ArrayList;
-import java.util.List;
+import models.TipoUsuario;
 
 /**
  *
- * @author andre
+ * @author Andre Cristen
  */
 public class ActionUtils {
 
-    public ArrayList<Action> createCRUDActions(BaseController controller) {
+    public ArrayList<Action> createCRUDActions(BaseController controller, ArrayList<TipoUsuario> permissions) {
         ArrayList<Action> crudAction = new ArrayList<Action>();
-        crudAction.add(createAddAction(controller));
-        crudAction.add(createEditAction(controller));
-        crudAction.add(createViewAction(controller));
-        crudAction.add(createDeleteAction(controller));
+        crudAction.add(createAddAction(controller, permissions));
+        crudAction.add(createEditAction(controller, permissions));
+        crudAction.add(createViewAction(controller, permissions));
+        crudAction.add(createDeleteAction(controller, permissions));
         return crudAction;
     }
 
-    public Action createAddAction(BaseController controller) {
-        Action add = new Action("Adicionar", "add", "addPersist", false, false, "addIcon.png");
+    public Action createAddAction(BaseController controller, ArrayList<TipoUsuario> permissions) {
+        Action add = new Action("Adicionar", "add", "addPersist", false, false, "addIcon.png", permissions);
         add.setController(controller);
         return add;
     }
 
-    public Action createEditAction(BaseController controller) {
-        Action edit = new Action("Editar", "edit", "editPersist", true, false, "editIcon.png");
+    public Action createEditAction(BaseController controller, ArrayList<TipoUsuario> permissions) {
+        Action edit = new Action("Editar", "edit", "editPersist", true, false, "editIcon.png", permissions);
         edit.setController(controller);
         return edit;
     }
 
-    public Action createViewAction(BaseController controller) {
-        Action view = new Action("Visualizar", "view", "", true, false, "findIcon.png");
+    public Action createViewAction(BaseController controller, ArrayList<TipoUsuario> permissions) {
+        Action view = new Action("Visualizar", "view", "", true, false, "findIcon.png", permissions);
         view.setController(controller);
         return view;
     }
 
-    public Action createDeleteAction(BaseController controller) {
-        Action delete = new Action("Excluir", "delete", "", true, true, "removeIcon.png");
+    public Action createDeleteAction(BaseController controller, ArrayList<TipoUsuario> permissions) {
+        Action delete = new Action("Excluir", "delete", "", true, true, "removeIcon.png", permissions);
         delete.setController(controller);
         return delete;
+    }
+    
+    public ArrayList<TipoUsuario> permiteAllTypes(){
+        ArrayList<TipoUsuario> permisions = new ArrayList<>();
+        for (TipoUsuario tipo : TipoUsuario.values()) {
+            permisions.add(tipo);
+        }
+        return permisions;
+    }
+    
+    public ArrayList<TipoUsuario> permiteAllTypesExcept(ArrayList<TipoUsuario> exceto){
+        ArrayList<TipoUsuario> permisions = new ArrayList<>();
+        for (TipoUsuario tipo : TipoUsuario.values()) {
+            if(!exceto.contains(tipo)){
+                permisions.add(tipo);
+            }
+        }
+        return permisions;
     }
 }
