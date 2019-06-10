@@ -6,6 +6,7 @@
 package JUMMP.frames;
 
 import java.util.List;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -36,7 +37,7 @@ public abstract class AbstractGridFrame extends JFrame {
 
     public AbstractGridFrame(List<Object> objetos, String title, AbstractTableModel tableAppend) {
         //Seta o titulo do frame
-        super(title);
+        super.setTitle(title);
         //Seta os objetos recebidos
         this.objetos = objetos;
         //Inicia com a table a ser inserida
@@ -55,6 +56,12 @@ public abstract class AbstractGridFrame extends JFrame {
 
     private void addComponents() {
         this.getContentPane().add(scrollTable);
+    }
+    
+    public void display() {
+        this.setResizable(true);
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
     }
 
 }

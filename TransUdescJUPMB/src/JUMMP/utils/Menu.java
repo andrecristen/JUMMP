@@ -52,7 +52,7 @@ public class Menu extends JFrame {
         Toolkit t = Toolkit.getDefaultToolkit();
         setSize(t.getScreenSize());
         setExtendedState(JFrame.MAXIMIZED_BOTH); 
-        setUndecorated(true);
+        //setUndecorated(true);
 
         // Cria uma barra de menu para o JFrame
         JMenuBar menuBar = new JMenuBar();

@@ -8,8 +8,10 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.LayoutManager;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JRootPane;
 
 /**
  * @author Andre Cristen
@@ -25,7 +27,7 @@ public class BaseForm extends JFrame {
     private Dimension dimensao;
 
     public BaseForm(String titulo, Dimension dimensao, Action action) {
-        super(titulo);
+        super.setTitle(titulo);
         this.dimensao = dimensao;
         this.actionPersist = action;
         initComponents();
