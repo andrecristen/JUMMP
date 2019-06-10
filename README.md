@@ -1,4 +1,4 @@
-# JUMMP Help.
+# JUMMP HELP.
 Micro frame Java Desktop para sistemas de CRUD.
 
 ## Requerimentos:
@@ -8,6 +8,8 @@ localizado em JUMMP/imports.
 
 - javax.persistence.jar
 - postgresql-42.2.2.jar
+
+- Adicionar biblioteca padrão EclipsLink 
 
 ## Configurações:
 
