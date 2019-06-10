@@ -31,6 +31,10 @@ public class Endereco {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
     public int getNumero() {
         return numero;

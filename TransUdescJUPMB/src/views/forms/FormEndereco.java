@@ -242,5 +242,72 @@ public class FormEndereco extends BaseForm {
         panelFormulario.add(textFieldPais, cons);
 
         super.addFormulario(panelFormulario);
+        
+        
     }
+
+    public JTextField getTextFieldID() {
+        return textFieldID;
+    }
+
+    public void setTextFieldID(JTextField textFieldID) {
+        this.textFieldID = textFieldID;
+    }
+
+    public JTextField getTextFieldNumero() {
+        return textFieldNumero;
+    }
+
+    public void setTextFieldNumero(JTextField textFieldNumero) {
+        this.textFieldNumero = textFieldNumero;
+    }
+
+    public JTextField getTextFieldCEP() {
+        return textFieldCEP;
+    }
+
+    public void setTextFieldCEP(JTextField textFieldCEP) {
+        this.textFieldCEP = textFieldCEP;
+    }
+
+    public JTextField getTextFieldBairro() {
+        return textFieldBairro;
+    }
+
+    public void setTextFieldBairro(JTextField textFieldBairro) {
+        this.textFieldBairro = textFieldBairro;
+    }
+
+    public JTextField getTextFieldCidade() {
+        return textFieldCidade;
+    }
+
+    public void setTextFieldCidade(JTextField textFieldCidade) {
+        this.textFieldCidade = textFieldCidade;
+    }
+
+    public JTextField getTextFieldRua() {
+        return textFieldRua;
+    }
+
+    public void setTextFieldRua(JTextField textFieldRua) {
+        this.textFieldRua = textFieldRua;
+    }
+
+    public JTextField getTextFieldEstado() {
+        return textFieldEstado;
+    }
+
+    public void setTextFieldEstado(JTextField textFieldEstado) {
+        this.textFieldEstado = textFieldEstado;
+    }
+
+    public JTextField getTextFieldPais() {
+        return textFieldPais;
+    }
+
+    public void setTextFieldPais(JTextField textFieldPais) {
+        this.textFieldPais = textFieldPais;
+    }
+    
 }
