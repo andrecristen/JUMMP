@@ -2,6 +2,7 @@ package views.forms;
 
 import JUMMP.forms.BaseForm;
 import JUMMP.utils.Action;
+import controllers.EnderecoController;
 import controllers.FilialController;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -65,7 +66,10 @@ public class FormFilial extends BaseForm {
         textFieldNome = new JTextField();
 
         //fill data com enderecos
+        EnderecoController controller = new EnderecoController();
+        controller.setIdentificadorGetMethod("getId");
         comboBoxEndereco = new JComboBox();
+        comboBoxEndereco = new JComboBox(controller.getModelList());
 
         textFieldID.setEditable(false);
 
@@ -134,4 +138,29 @@ public class FormFilial extends BaseForm {
 
         super.addFormulario(panelFormulario);
     }
+
+    public JTextField getTextFieldID() {
+        return textFieldID;
+    }
+
+    public void setTextFieldID(JTextField textFieldID) {
+        this.textFieldID = textFieldID;
+    }
+
+    public JTextField getTextFieldNome() {
+        return textFieldNome;
+    }
+
+    public void setTextFieldNome(JTextField textFieldNome) {
+        this.textFieldNome = textFieldNome;
+    }
+
+    public JComboBox getComboBoxEndereco() {
+        return comboBoxEndereco;
+    }
+
+    public void setComboBoxEndereco(JComboBox comboBoxEndereco) {
+        this.comboBoxEndereco = comboBoxEndereco;
+    }
+
 }
