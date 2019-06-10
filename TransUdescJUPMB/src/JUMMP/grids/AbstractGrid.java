@@ -17,25 +17,39 @@ import JUMMP.utils.Action;
  */
 public abstract class AbstractGrid extends AbstractTableModel {
 
+    /**
+     * Busca todas as linhas da tabela com base no controler recebido e o metodo
+     * getAllModels(), que todo base controller vai ter.
+     */
     private List<Object> linhas;
+    /**
+     * Recebe um array de strings na ordem que os titulos das colunas serao 
+     * apresentados exemplo:
+     * String[] colunasCarregamentos = new String[]{"#", "Endereço chegada", "Endereço saída"};
+     * deve ser passado no metodo getColunas();
+     */
     private String[] colunas;
-    private Action[] actions;
-    private BaseController controller;
+    /**
+     * Recebe o controlador dos modelos que serao listas serve unica e exclusivamente
+     * para buscar os modelos da tabela, isso porque as actions sao independetes
+     * em relacao a controladores.
+     */
+    private BaseController controllerToList;
 
-    public AbstractGrid(BaseController controller) {
-        this.linhas = controller.getAllModels();
+    public AbstractGrid(BaseController controllerToList) {
+        this.linhas = controllerToList.getAllModels();
         this.colunas = this.getColunas();
-        this.controller = controller;
+        this.controllerToList = controllerToList;
     }
 
     public void limparTabela() {
         linhas.clear();
         super.fireTableDataChanged();
     }
-    
-    public void reloadTable(){
+
+    public void reloadTable() {
         limparTabela();
-        this.linhas = this.controller.getAllModels();
+        this.linhas = this.controllerToList.getAllModels();
         super.fireTableDataChanged();
     }
 
@@ -69,11 +83,11 @@ public abstract class AbstractGrid extends AbstractTableModel {
     }
 
     public BaseController getController() {
-        return controller;
+        return controllerToList;
     }
 
     public void setController(BaseController controller) {
-        this.controller = controller;
+        this.controllerToList = controller;
     }
 
 }
