@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import models.TipoUsuario;
 
 /**
- * Classe responsavel por representar todas as acoes do sistemas como aberturars
+ * Classe responsavel por representar todas as acoes do sistemas como aberturas
  * de form, grid, confirmacoes de form entre outros.
  *
  * Action Grid = Acao a ser chamada quando clicarmos em um botao localizado em
