@@ -11,16 +11,15 @@ localizado em JUMMP/imports.
 
 ## Configurações:
 
-O nome da unidade de persistencia deve ser definido em Main/Home na constante PERSISTENCE_NAME;
-
-O nome do sistema deve ser definido em Main/Home na constante SYSTEM_NAME;
+- O nome da unidade de persistencia deve ser definido em Main/Home na constante PERSISTENCE_NAME;
+- O nome do sistema deve ser definido em Main/Home na constante SYSTEM_NAME;
 
 ## Regras implementação:
 
-Todos controllers devem extender ao BaseController;
-Todos forms devem extender ao BaseForm;
-Todos grids devem extender ao AbstractGrid;
-Os icones a serem usadas nas actions devem inseridos na pasta JUMMP.icons, e ao definir para a action, usar apenas o nome da imagem.
+- Todos controllers devem extender ao BaseController;
+- Todos forms devem extender ao BaseForm;
+- Todos grids devem extender ao AbstractGrid;
+- Os icones a serem usadas nas actions devem inseridos na pasta JUMMP.icons, e ao definir para a action, usar apenas o nome da imagem.
 
 ## Erros previstos:
 - **Form em branco ao abrir**: Remover métodos getLayout() e setLayout(); 
