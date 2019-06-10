@@ -1,8 +1,6 @@
 # JUMMP
 Micro frame Java Desktop para sistemas de CRUD.
 
-
-@Author Andre Cristen
 Help.
 
 Para a estrutura funcionar corretamente, deve se importar estes dois arquivos 
