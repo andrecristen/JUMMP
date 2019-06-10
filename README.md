@@ -1,7 +1,7 @@
-# JUMMP
+# JUMMP Help.
 Micro frame Java Desktop para sistemas de CRUD.
 
-Help.
+## Requerimentos:
 
 Para a estrutura funcionar corretamente, deve se importar estes dois arquivos 
 localizado em JUMMP/imports.
@@ -9,18 +9,21 @@ localizado em JUMMP/imports.
 - javax.persistence.jar
 - postgresql-42.2.2.jar
 
-O nome da unidade de persistencia deve ser definido em Main/Home na constante 
-PERSISTENCE_NAME.
+## Configurações:
 
-Todos controllers devem extender ao BaseController.
-Todos forms devem extender ao BaseForm.
-Todos grids devem extender ao AbstractGrid.
+O nome da unidade de persistencia deve ser definido em Main/Home na constante PERSISTENCE_NAME;
+
+O nome do sistema deve ser definido em Main/Home na constante SYSTEM_NAME;
+
+## Regras implementação:
+
+Todos controllers devem extender ao BaseController;
+Todos forms devem extender ao BaseForm;
+Todos grids devem extender ao AbstractGrid;
+Os icones a serem usadas nas actions devem inseridos na pasta JUMMP.icons, e ao definir para a action, usar apenas o nome da imagem.
 
 ## Erros previstos:
-- Form em branco ao abrir: Remover métodos getLayout() e setLayout(); 
-
-Os icones a serem usadas nas actions devem inseridos na pasta JUMMP.icons, e 
-ao definir para a action, usar apenas o nome da imagem.
+- **Form em branco ao abrir**: Remover métodos getLayout() e setLayout(); 
 
 # Aplicação Exemplo
 
