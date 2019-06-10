@@ -3,7 +3,6 @@ package JUMMP.utils;
 import JUMMP.authorization.SessionAuth;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -21,6 +20,7 @@ import controllers.UsuarioController;
 import controllers.VeiculoController;
 import controllers.VolumeController;
 import java.awt.Toolkit;
+import java.util.ArrayList;
 import main.Home;
 import views.grids.CarregamentoGrid;
 import views.grids.EnderecoGrid;
@@ -118,7 +118,11 @@ public class Menu extends JFrame {
         filial.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent action) {
-                InstanceGridActionsFrame frameFilial = new InstanceGridActionsFrame("Filiais", new FilialGrid(), actionUtils.createCRUDActions(new FilialController()));
+                ArrayList<Action> actions = actionUtils.createCRUDActions(new FilialController());
+                Action enderecoCadastrar = new Action("Endereço", "add", "addPersist", false, false, "addIcon.png");
+                enderecoCadastrar.setController(new EnderecoController());
+                actions.add(enderecoCadastrar);
+                InstanceGridActionsFrame frameFilial = new InstanceGridActionsFrame("Filiais", new FilialGrid(), actions);
                 frameFilial.display();
             }
         });

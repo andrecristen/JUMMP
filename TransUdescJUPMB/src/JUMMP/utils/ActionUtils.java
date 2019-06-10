@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class ActionUtils {
 
-    public List<Action> createCRUDActions(BaseController controller) {
+    public ArrayList<Action> createCRUDActions(BaseController controller) {
         ArrayList<Action> crudAction = new ArrayList<Action>();
         crudAction.add(createAddAction(controller));
         crudAction.add(createEditAction(controller));

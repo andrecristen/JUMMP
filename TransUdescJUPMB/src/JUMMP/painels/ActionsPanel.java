@@ -112,7 +112,7 @@ public class ActionsPanel extends JPanel {
                     }
                 });
             }
-            if(!action.getIcon().isEmpty()){
+            if(action.getIcon() != null){
                 buttonAction.setIcon(new ImageIcon(Class.class.getResource("/JUMMP/icons/"+action.getIcon())));
             }
             actionsButton.add(buttonAction);
