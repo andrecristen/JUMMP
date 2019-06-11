@@ -16,7 +16,7 @@ localizado em JUMMP/imports.
  
  - Modelo chamado Usuario, com id, login, senha e TipoUsuario;
  - Enum TipoUsuario, com todos os tipos de usuários que o sistema comporta;
- - Named Query com nome de validarLogin Exemplo: 
+ - Named Query com nome de validarLogin, dentro do modelo de Usuario Exemplo: 
       * @NamedQueries(@NamedQuery(name="validarLogin",query="SELECT user FROM Usuario user WHERE user.login = ?1 AND user.senha = ?2")).
 
 ## Configurações:
