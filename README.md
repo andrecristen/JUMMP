@@ -33,6 +33,7 @@ localizado em JUMMP/imports.
 
 ## Erros previstos:
 - **Form em branco ao abrir**: Remover métodos getLayout() e setLayout(); 
+- **Geração de tabelas não funcionou**: Tente efetuar um login mesmo que inválido para o sistema efetuar conexão com a base de dados; 
 
 # Aplicação Exemplo
 
