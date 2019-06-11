@@ -11,12 +11,12 @@ localizado em JUMMP/imports.
 
 - Adicionar biblioteca padrão EclipseLink (JPA 2.1);
 
-## JUMMP.authorization
+## JUMMP/authorization
  Requerimentos para funcionamento do authorization:
  
  - Modelo chamado Usuario, com id, login, senha e TipoUsuario;
  - Enum TipoUsuario, com todos os tipos de usuários que o sistema comporta;
- - Named Query com nome de validarLogin Exemplo: 
+ - Named Query com nome de validarLogin, dentro do modelo de Usuario Exemplo: 
       * @NamedQueries(@NamedQuery(name="validarLogin",query="SELECT user FROM Usuario user WHERE user.login = ?1 AND user.senha = ?2")).
 
 ## Configurações:
@@ -29,10 +29,11 @@ localizado em JUMMP/imports.
 - Todos controllers devem extender ao BaseController;
 - Todos forms devem extender ao BaseForm;
 - Todos grids devem extender ao AbstractGrid;
-- Os icones a serem usadas nas actions devem inseridos na pasta JUMMP.icons, e ao definir para a action, usar apenas o nome da imagem.
+- Os icones a serem usadas nas actions devem inseridos na pasta JUMMP/icons, e ao definir para a action, usar apenas o nome da imagem.
 
 ## Erros previstos:
 - **Form em branco ao abrir**: Remover métodos getLayout() e setLayout(); 
+- **Geração de tabelas não funcionou**: Tente efetuar um login mesmo que inválido para o sistema efetuar conexão com a base de dados; 
 
 # Aplicação Exemplo
 
