@@ -33,16 +33,16 @@ public class EnderecoController extends BaseController {
      try {
             Endereco endereco = new Endereco();
             FormEndereco formConcreto = (FormEndereco) parameters;
-            if (!formConcreto.getTextFieldID().getText().isEmpty()) {
-                endereco.setId(Integer.parseInt(formConcreto.getTextFieldID().getText()));
+            if (!formConcreto.getInputId().getValue().isEmpty()) {
+                endereco.setId(Integer.parseInt(formConcreto.getInputId().getValue()));
             }
-            endereco.setBairro(formConcreto.getTextFieldBairro().getText());
-            endereco.setCep(Integer.parseInt(formConcreto.getTextFieldCEP().getText()));
-            endereco.setCidade(formConcreto.getTextFieldCidade().getText());
-            endereco.setNumero(Integer.parseInt(formConcreto.getTextFieldNumero().getText()));
-            endereco.setPais(formConcreto.getTextFieldPais().getText());
-            endereco.setRua(formConcreto.getTextFieldRua().getText());
-            endereco.setUf(formConcreto.getTextFieldEstado().getText());
+            endereco.setBairro(formConcreto.getInputBairro().getValue());
+            endereco.setCep(Integer.parseInt(formConcreto.getInputCEP().getValue()));
+            endereco.setCidade(formConcreto.getInputCidade().getValue());
+            endereco.setNumero(Integer.parseInt(formConcreto.getInputNumero().getValue()));
+            endereco.setPais(formConcreto.getInputPais().getValue());
+            endereco.setRua(formConcreto.getInputRua().getValue());
+            endereco.setUf(formConcreto.getInputEstado().getValue());
             return endereco;
         } catch (Exception exception) {
             new EventMessage(exception.getMessage(), EventMessage.getTIPO_ERRO());
@@ -54,14 +54,14 @@ public class EnderecoController extends BaseController {
          try {
             FormEndereco formConcreto = (FormEndereco) view;
             Endereco modelConcreto = (Endereco) model;
-            formConcreto.getTextFieldID().setText(Integer.toString(modelConcreto.getId()));
-            formConcreto.getTextFieldBairro().setText(modelConcreto.getBairro());
-            formConcreto.getTextFieldCEP().setText(Integer.toString(modelConcreto.getCep()));
-            formConcreto.getTextFieldCidade().setText(modelConcreto.getCidade());
-            formConcreto.getTextFieldNumero().setText(Integer.toString(modelConcreto.getNumero()));
-            formConcreto.getTextFieldPais().setText(modelConcreto.getPais());
-            formConcreto.getTextFieldRua().setText(modelConcreto.getRua());
-            formConcreto.getTextFieldEstado().setText(modelConcreto.getUf());
+            formConcreto.getInputId().setValue(Integer.toString(modelConcreto.getId()));
+            formConcreto.getInputBairro().setValue(modelConcreto.getBairro());
+            formConcreto.getInputCEP().setValue(Integer.toString(modelConcreto.getCep()));
+            formConcreto.getInputCidade().setValue(modelConcreto.getCidade());
+            formConcreto.getInputNumero().setValue(Integer.toString(modelConcreto.getNumero()));
+            formConcreto.getInputPais().setValue(modelConcreto.getPais());
+            formConcreto.getInputRua().setValue(modelConcreto.getRua());
+            formConcreto.getInputEstado().setValue(modelConcreto.getUf());
             formConcreto.repaint();
         } catch (Exception exception) {
             new EventMessage(exception.getMessage(), EventMessage.getTIPO_ERRO());
