@@ -11,7 +11,7 @@ localizado em JUMMP/imports.
 
 - Adicionar biblioteca padrão EclipseLink (JPA 2.1);
 
-## JUMMP.authorization
+## JUMMP/authorization
  Requerimentos para funcionamento do authorization:
  
  - Modelo chamado Usuario, com id, login, senha e TipoUsuario;
@@ -29,7 +29,7 @@ localizado em JUMMP/imports.
 - Todos controllers devem extender ao BaseController;
 - Todos forms devem extender ao BaseForm;
 - Todos grids devem extender ao AbstractGrid;
-- Os icones a serem usadas nas actions devem inseridos na pasta JUMMP.icons, e ao definir para a action, usar apenas o nome da imagem.
+- Os icones a serem usadas nas actions devem inseridos na pasta JUMMP/icons, e ao definir para a action, usar apenas o nome da imagem.
 
 ## Erros previstos:
 - **Form em branco ao abrir**: Remover métodos getLayout() e setLayout(); 
