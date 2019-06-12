@@ -37,15 +37,15 @@ public class FormUsuario extends BaseForm {
     private void addComponents() {
         PessoaController controller = new PessoaController();
         controller.setIdentificadorGetMethod("getId");
-        inputId = new Input("ID", 1, true, false);
+        inputId = new Input("ID", true, false);
         panelFormulario.add(inputId.getComponent());
         selectPessoa = new Select("Pessoa", true, true, controller.getModelList());
         panelFormulario.add(selectPessoa.getComponent());
         selectTipoUsuario = new Select("Tipo", true, true, TipoUsuario.values());
         panelFormulario.add(selectTipoUsuario.getComponent());
-        inputLogin = new Input("Login", 1, true, true);
+        inputLogin = new Input("Login", true, true);
         panelFormulario.add(inputLogin.getComponent());
-        inputSenha = new Input("Senha", 1, true, true);
+        inputSenha = new Input("Senha", true, true);
         panelFormulario.add(inputSenha.getComponent());
         super.addFormulario(panelFormulario);
     }

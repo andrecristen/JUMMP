@@ -1,6 +1,5 @@
 package JUMMP.forms;
 
-import JUMMP.controllers.BaseController;
 import JUMMP.grids.AbstractGrid;
 import JUMMP.painels.FormPanel;
 import JUMMP.utils.Action;
@@ -8,10 +7,8 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.LayoutManager;
-import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JRootPane;
 
 /**
  * @author Andre Cristen

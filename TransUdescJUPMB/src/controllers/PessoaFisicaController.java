@@ -33,14 +33,14 @@ public class PessoaFisicaController extends BaseController {
         try {
             PessoaFisica pessoaFisica = new PessoaFisica();
             FormPessoaFisica formConcreto = (FormPessoaFisica) parameters;
-            if (!formConcreto.getTextFieldID().getText().isEmpty()) {
-                pessoaFisica.setId(Integer.parseInt(formConcreto.getTextFieldID().getText()));
+            if (!formConcreto.getInputId().getValue().isEmpty()) {
+                pessoaFisica.setId(Integer.parseInt(formConcreto.getInputId().getValue()));
             }
-            pessoaFisica.setCpf(Long.parseLong(formConcreto.getTextFieldCPF().getText()));
-            pessoaFisica.setSobrenome(formConcreto.getTextFieldSobrenome().getText());
-            pessoaFisica.setDataNascimento(new Date(formConcreto.getTextFieldDataNascimento().getText()));
+            pessoaFisica.setCpf(Long.parseLong(formConcreto.getInputCPF().getValue()));
+            pessoaFisica.setSobrenome(formConcreto.getInputSobrenome().getValue());
+            pessoaFisica.setDataNascimento(formConcreto.getInputDataNascimento().getValue());
             PessoaController pessoaController = new PessoaController();
-            Pessoa pessoaEcontrada = (Pessoa) pessoaController.findById(Integer.parseInt(formConcreto.getComboBoxPessoa().getSelectedItem().toString()));
+            Pessoa pessoaEcontrada = (Pessoa) pessoaController.findById(Integer.parseInt(formConcreto.getSelectPessoa().getValue()));
             pessoaFisica.setPessoa(pessoaEcontrada);
             return pessoaFisica;
         } catch (Exception exception) {
@@ -53,12 +53,12 @@ public class PessoaFisicaController extends BaseController {
         try {
             FormPessoaFisica formConcreto = (FormPessoaFisica) view;
             PessoaFisica modelConcreto = (PessoaFisica) model;
-            formConcreto.getTextFieldCPF().setText(Long.toString(modelConcreto.getCpf()));
-            formConcreto.getTextFieldID().setText(Integer.toString(modelConcreto.getId()));
-            //Date date = modelConcreto.getDataNascimento();
-            //formConcreto.getTextFieldDataNascimento().setText(date.getDay()+"/"+date.getMonth()+"/"+date.getYear());
-            formConcreto.getComboBoxPessoa().setSelectedItem(modelConcreto.getPessoa().getId());
-            formConcreto.getTextFieldSobrenome().setText(modelConcreto.getSobrenome());
+            formConcreto.getInputCPF().setValue(Long.toString(modelConcreto.getCpf()));
+            formConcreto.getInputId().setValue(Integer.toString(modelConcreto.getId()));
+            Date date = modelConcreto.getDataNascimento();
+            formConcreto.getInputDataNascimento().setValue(date);
+            formConcreto.getSelectPessoa().setValue(modelConcreto.getPessoa().getId());
+            formConcreto.getInputSobrenome().setValue(modelConcreto.getSobrenome());
             formConcreto.repaint();
         } catch (Exception exception) {
             new EventMessage(exception.getMessage(), EventMessage.getTIPO_ERRO());

@@ -33,21 +33,21 @@ public class FormEndereco extends BaseForm {
     }
 
     private void addComponents() {
-        inputId = new Input("ID", 1, true, false);
+        inputId = new Input("ID", true, false);
         panelFormulario.add(inputId.getComponent());
-        inputNumero = new Input("Número", 1, true, true);
+        inputNumero = new Input("Número", true, true);
         panelFormulario.add(inputNumero.getComponent());
-        inputCEP = new Input("CEP", 1, true, true);
+        inputCEP = new Input("CEP", true, true);
         panelFormulario.add(inputCEP.getComponent());
-        inputRua = new Input("Rua", 1, true, true);
+        inputRua = new Input("Rua", true, true);
         panelFormulario.add(inputRua.getComponent());
-        inputBairro = new Input("Bairro", 1, true, true);
+        inputBairro = new Input("Bairro", true, true);
         panelFormulario.add(inputBairro.getComponent());
-        inputCidade = new Input("Cidade", 1, true, true);
+        inputCidade = new Input("Cidade", true, true);
         panelFormulario.add(inputCidade.getComponent());
-        inputEstado = new Input("Estado", 1, true, true);
+        inputEstado = new Input("Estado", true, true);
         panelFormulario.add(inputEstado.getComponent());
-        inputPais = new Input("Pais", 1, true, true);
+        inputPais = new Input("Pais", true, true);
         panelFormulario.add(inputPais.getComponent());
         super.addFormulario(panelFormulario);
     }

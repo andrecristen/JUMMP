@@ -31,9 +31,8 @@ public class Input {
 
     private JLabel label;
 
-    public Input(String title, int type, boolean required, boolean editable) {
+    public Input(String title, boolean required, boolean editable) {
         this.title = title;
-        this.type = type;
         this.required = required;
         this.editable = editable;
     }
