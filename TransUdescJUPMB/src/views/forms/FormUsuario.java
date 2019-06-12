@@ -1,41 +1,25 @@
 package views.forms;
 
 import JUMMP.forms.BaseForm;
+import JUMMP.forms.components.Input;
+import JUMMP.forms.components.Select;
 import JUMMP.utils.Action;
 import controllers.PessoaController;
-import controllers.UsuarioController;
 import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.awt.Insets;
 import java.awt.LayoutManager;
-import javax.swing.JComboBox;
 import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
 import models.TipoUsuario;
 
 public class FormUsuario extends BaseForm {
 
-    private JLabel labelID;
-    private JLabel labelPessoa;
-    private JLabel labelTipo;
-    private JLabel labelLogin;
-    private JLabel labelSenha;
-    private JTextField textFieldID;
-    private JComboBox comboBoxPessoa;
-    private JComboBox comboBoxTipo;
-    private JTextField textFieldLogin;
-    private JTextField textFieldSenha;
-
-    private GridBagConstraints cons;
-
     private JPanel panelFormulario;
-    private Dimension dimensao;
     private LayoutManager layout;
+    private Input inputId;
+    private Input inputLogin;
+    private Input inputSenha;
+    private Select selectPessoa;
+    private Select selectTipoUsuario;
 
     public FormUsuario(Action action) {
         super("Formulário Usuário", new Dimension(450, 300), action);
@@ -45,177 +29,73 @@ public class FormUsuario extends BaseForm {
     }
 
     private void initComponents() {
-        labelID = new JLabel("ID:  ");
-        labelPessoa = new JLabel("Pessoa:  ");
-        labelTipo = new JLabel("Tipo:  ");
-        labelLogin = new JLabel("Login:  ");
-        labelSenha = new javax.swing.JLabel("Senha:  ");
-
-        labelID.setFont(new Font("Arial", Font.PLAIN, (int) 18));
-        labelPessoa.setFont(new Font("Arial", Font.PLAIN, (int) 18));
-        labelTipo.setFont(new Font("Arial", Font.PLAIN, (int) 18));
-        labelLogin.setFont(new Font("Arial", Font.PLAIN, (int) 18));
-        labelSenha.setFont(new Font("Arial", Font.PLAIN, (int) 18));
-
-        labelID.setHorizontalAlignment(SwingConstants.RIGHT);
-        labelPessoa.setHorizontalAlignment(SwingConstants.RIGHT);
-        labelTipo.setHorizontalAlignment(SwingConstants.RIGHT);
-        labelLogin.setHorizontalAlignment(SwingConstants.RIGHT);
-        labelSenha.setHorizontalAlignment(SwingConstants.RIGHT);
-
-        textFieldID = new JTextField();
-        textFieldLogin = new JTextField();
-        textFieldSenha = new JTextField();
-
-        PessoaController controller = new PessoaController();
-        controller.setIdentificadorGetMethod("getId");
-        comboBoxPessoa = new JComboBox(controller.getModelList());
-        comboBoxPessoa.setSelectedIndex(-1);
-
-        comboBoxTipo = new JComboBox(TipoUsuario.values());
-        comboBoxTipo.setSelectedIndex(-1);
-
-        textFieldID.setEditable(false);
-
-        textFieldID.setFont(new Font("Arial", Font.PLAIN, (int) 18));
-        textFieldLogin.setFont(new Font("Arial", Font.PLAIN, (int) 18));
-        textFieldSenha.setFont(new Font("Arial", Font.PLAIN, (int) 18));
-        comboBoxPessoa.setFont(new Font("Arial", Font.PLAIN, (int) 18));
-        comboBoxTipo.setFont(new Font("Arial", Font.PLAIN, (int) 18));
-
-        layout = new GridBagLayout();
-
+        layout = new GridLayout(8, 1);
         panelFormulario = new JPanel();
         panelFormulario.setLayout(layout);
     }
 
     private void addComponents() {
-        cons = new GridBagConstraints();
-        cons.gridx = 0;
-        cons.gridy = 0;
-        cons.insets = new Insets(5, 0, 5, 0);
-        cons.gridwidth = 1;
-        cons.fill = GridBagConstraints.HORIZONTAL;
-        panelFormulario.add(labelID, cons);
-
-        cons = new GridBagConstraints();
-        cons.gridx = 1;
-        cons.gridy = 0;
-        cons.gridwidth = 1;
-        cons.ipadx = 200;
-        cons.fill = GridBagConstraints.HORIZONTAL;
-        panelFormulario.add(textFieldID, cons);
-
-        cons = new GridBagConstraints();
-        cons.gridx = 0;
-        cons.insets = new Insets(5, 0, 5, 0);
-        cons.gridy = 1;
-        cons.gridwidth = 1;
-        cons.fill = GridBagConstraints.HORIZONTAL;
-        panelFormulario.add(labelPessoa, cons);
-
-        cons = new GridBagConstraints();
-        cons.gridx = 1;
-        cons.gridy = 1;
-        cons.insets = new Insets(5, 0, 5, 0);
-        cons.gridwidth = 1;
-        cons.ipadx = 200;
-        cons.fill = GridBagConstraints.HORIZONTAL;
-        panelFormulario.add(comboBoxPessoa, cons);
-
-        cons = new GridBagConstraints();
-        cons.gridx = 0;
-        cons.gridy = 2;
-        cons.insets = new Insets(5, 0, 5, 0);
-        cons.gridwidth = 1;
-        cons.fill = GridBagConstraints.HORIZONTAL;
-        panelFormulario.add(labelTipo, cons);
-
-        cons = new GridBagConstraints();
-        cons.gridx = 1;
-        cons.gridy = 2;
-        cons.gridwidth = 1;
-        cons.insets = new Insets(5, 0, 5, 0);
-        cons.ipadx = 200;
-        cons.fill = GridBagConstraints.HORIZONTAL;
-        panelFormulario.add(comboBoxTipo, cons);
-
-        cons = new GridBagConstraints();
-        cons.gridx = 0;
-        cons.gridy = 3;
-        cons.insets = new Insets(5, 0, 5, 0);
-        cons.gridwidth = 1;
-        cons.fill = GridBagConstraints.HORIZONTAL;
-        panelFormulario.add(labelLogin, cons);
-
-        cons = new GridBagConstraints();
-        cons.gridx = 1;
-        cons.insets = new Insets(5, 0, 5, 0);
-        cons.gridy = 3;
-        cons.gridwidth = 1;
-        cons.ipadx = 200;
-        cons.fill = GridBagConstraints.HORIZONTAL;
-        panelFormulario.add(textFieldLogin, cons);
-
-        cons = new GridBagConstraints();
-        cons.gridx = 0;
-        cons.gridy = 4;
-        cons.insets = new Insets(5, 0, 5, 0);
-        cons.gridwidth = 1;
-        cons.fill = GridBagConstraints.HORIZONTAL;
-        panelFormulario.add(labelSenha, cons);
-
-        cons = new GridBagConstraints();
-        cons.gridx = 1;
-        cons.gridy = 4;
-        cons.insets = new Insets(5, 0, 5, 0);
-        cons.gridwidth = 1;
-        cons.ipadx = 200;
-        cons.fill = GridBagConstraints.HORIZONTAL;
-        panelFormulario.add(textFieldSenha, cons);
-
+        PessoaController controller = new PessoaController();
+        controller.setIdentificadorGetMethod("getId");
+        inputId = new Input("ID", 1, true, false);
+        panelFormulario.add(inputId.getComponent());
+        selectPessoa = new Select("Pessoa", true, true, controller.getModelList());
+        panelFormulario.add(selectPessoa.getComponent());
+        selectTipoUsuario = new Select("Tipo", true, true, TipoUsuario.values());
+        panelFormulario.add(selectTipoUsuario.getComponent());
+        inputLogin = new Input("Login", 1, true, true);
+        panelFormulario.add(inputLogin.getComponent());
+        inputSenha = new Input("Senha", 1, true, true);
+        panelFormulario.add(inputSenha.getComponent());
         super.addFormulario(panelFormulario);
     }
 
-    public JTextField getTextFieldID() {
-        return textFieldID;
+    public JPanel getPanelFormulario() {
+        return panelFormulario;
     }
 
-    public void setTextFieldID(JTextField textFieldID) {
-        this.textFieldID = textFieldID;
+    public void setPanelFormulario(JPanel panelFormulario) {
+        this.panelFormulario = panelFormulario;
     }
 
-    public JComboBox getComboBoxPessoa() {
-        return comboBoxPessoa;
+    public Input getInputId() {
+        return inputId;
     }
 
-    public void setComboBoxPessoa(JComboBox comboBoxPessoa) {
-        this.comboBoxPessoa = comboBoxPessoa;
+    public void setInputId(Input inputId) {
+        this.inputId = inputId;
     }
 
-    public JComboBox getComboBoxTipo() {
-        return comboBoxTipo;
+    public Input getInputLogin() {
+        return inputLogin;
     }
 
-    public void setComboBoxTipo(JComboBox comboBoxTipo) {
-        this.comboBoxTipo = comboBoxTipo;
+    public void setInputLogin(Input inputLogin) {
+        this.inputLogin = inputLogin;
     }
 
-    public JTextField getTextFieldLogin() {
-        return textFieldLogin;
+    public Input getInputSenha() {
+        return inputSenha;
     }
 
-    public void setTextFieldLogin(JTextField textFieldLogin) {
-        this.textFieldLogin = textFieldLogin;
+    public void setInputSenha(Input inputSenha) {
+        this.inputSenha = inputSenha;
     }
 
-    public JTextField getTextFieldSenha() {
-        return textFieldSenha;
+    public Select getSelectPessoa() {
+        return selectPessoa;
     }
 
-    public void setTextFieldSenha(JTextField textFieldSenha) {
-        this.textFieldSenha = textFieldSenha;
+    public void setSelectPessoa(Select selectPessoa) {
+        this.selectPessoa = selectPessoa;
     }
-    
-    
+
+    public Select getSelectTipoUsuario() {
+        return selectTipoUsuario;
+    }
+
+    public void setSelectTipoUsuario(Select selectTipoUsuario) {
+        this.selectTipoUsuario = selectTipoUsuario;
+    }
+
 }

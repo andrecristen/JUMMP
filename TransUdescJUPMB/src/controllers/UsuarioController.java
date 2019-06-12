@@ -41,14 +41,14 @@ public class UsuarioController extends BaseController {
         try {
             Usuario usuario = new Usuario();
             FormUsuario formConcreto = (FormUsuario) parameters;
-            if (!formConcreto.getTextFieldID().getText().isEmpty()) {
-                usuario.setId(Integer.parseInt(formConcreto.getTextFieldID().getText()));
+            if (!formConcreto.getInputId().getValue().isEmpty()) {
+                usuario.setId(Integer.parseInt(formConcreto.getInputId().getValue()));
             }
-            usuario.setLogin(formConcreto.getTextFieldLogin().getText());
-            usuario.setSenha(formConcreto.getTextFieldSenha().getText());
-            usuario.setTipo(TipoUsuario.fromString(formConcreto.getComboBoxTipo().getSelectedItem().toString()));
+            usuario.setLogin(formConcreto.getInputLogin().getValue());
+            usuario.setSenha(formConcreto.getInputSenha().getValue());
+            usuario.setTipo(TipoUsuario.fromString(formConcreto.getSelectTipoUsuario().getValue()));
             PessoaController pessoaController = new PessoaController();
-            Pessoa pessoaEcontrada = (Pessoa) pessoaController.findById(Integer.parseInt(formConcreto.getComboBoxPessoa().getSelectedItem().toString()));
+            Pessoa pessoaEcontrada = (Pessoa) pessoaController.findById(Integer.parseInt(formConcreto.getSelectPessoa().getValue()));
             usuario.setPessoa(pessoaEcontrada);
             return usuario;
         } catch (Exception exception) {
@@ -62,11 +62,11 @@ public class UsuarioController extends BaseController {
         try {
             FormUsuario formConcreto = (FormUsuario) view;
             Usuario modelConcreto = (Usuario) model;
-            formConcreto.getTextFieldID().setText(Integer.toString(modelConcreto.getId()));
-            formConcreto.getTextFieldLogin().setText(modelConcreto.getLogin());
-            formConcreto.getTextFieldSenha().setText(modelConcreto.getSenha());
-            formConcreto.getComboBoxTipo().setSelectedItem(modelConcreto.getTipo());
-            formConcreto.getComboBoxPessoa().setSelectedItem(modelConcreto.getPessoa().getId());
+            formConcreto.getInputId().setValue(Integer.toString(modelConcreto.getId()));
+            formConcreto.getInputLogin().setValue(modelConcreto.getLogin());
+            formConcreto.getInputSenha().setValue(modelConcreto.getSenha());
+            formConcreto.getSelectTipoUsuario().setValue(modelConcreto.getTipo());
+            formConcreto.getSelectPessoa().setValue(modelConcreto.getPessoa().getId());
             formConcreto.repaint();
         } catch (Exception exception) {
             new EventMessage(exception.getMessage(), EventMessage.getTIPO_ERRO());
