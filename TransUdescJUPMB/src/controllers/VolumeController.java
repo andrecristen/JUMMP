@@ -31,12 +31,12 @@ public class VolumeController extends BaseController {
         try {
             Volume volume = new Volume();
             FormVolume formConcreto = (FormVolume) parameters;
-            if (!formConcreto.getTextFieldID().getText().isEmpty()) {
-                volume.setId(Integer.parseInt(formConcreto.getTextFieldID().getText()));
+            if (!formConcreto.getInputId().getValue().isEmpty()) {
+                volume.setId(Integer.parseInt(formConcreto.getInputId().getValue()));
             }
-            volume.setCubagem(Double.parseDouble(formConcreto.getTextFieldCubagem().getText()));
-            volume.setPesoBruto(Float.parseFloat(formConcreto.getTextFieldPesoBruto().getText()));
-            volume.setPesoLiquido(Float.parseFloat(formConcreto.getTextFieldPesoLiquido().getText()));
+            volume.setCubagem(Double.parseDouble(formConcreto.getInputCubagem().getValue()));
+            volume.setPesoBruto(Float.parseFloat(formConcreto.getInputPesoBruto().getValue()));
+            volume.setPesoLiquido(Float.parseFloat(formConcreto.getInputPesoLiquido().getValue()));
             return volume;
         } catch (Exception exception) {
             new EventMessage(exception.getMessage(), EventMessage.getTIPO_ERRO());
@@ -48,10 +48,10 @@ public class VolumeController extends BaseController {
         try {
             FormVolume formConcreto = (FormVolume) view;
             Volume modelConcreto = (Volume) model;
-            formConcreto.getTextFieldID().setText(Integer.toString(modelConcreto.getId()));
-            formConcreto.getTextFieldCubagem().setText(Double.toString(modelConcreto.getCubagem()));
-            formConcreto.getTextFieldPesoBruto().setText(Double.toString(modelConcreto.getPesoBruto()));
-            formConcreto.getTextFieldPesoLiquido().setText(Double.toString(modelConcreto.getPesoLiquido()));
+            formConcreto.getInputId().setValue(Integer.toString(modelConcreto.getId()));
+            formConcreto.getInputCubagem().setValue(Double.toString(modelConcreto.getCubagem()));
+            formConcreto.getInputPesoBruto().setValue(Double.toString(modelConcreto.getPesoBruto()));
+            formConcreto.getInputPesoLiquido().setValue(Double.toString(modelConcreto.getPesoLiquido()));
             formConcreto.repaint();
         } catch (Exception exception) {
             new EventMessage(exception.getMessage(), EventMessage.getTIPO_ERRO());
