@@ -33,10 +33,10 @@ public class PessoaController extends BaseController {
         try {
             Pessoa pessoa = new Pessoa();
             FormPessoa formConcreto = (FormPessoa) parameters;
-            if (!formConcreto.getTextFieldID().getText().isEmpty()) {
-                pessoa.setId(Integer.parseInt(formConcreto.getTextFieldID().getText()));
+            if (!formConcreto.getInputID().getValue().isEmpty()) {
+                pessoa.setId(Integer.parseInt(formConcreto.getInputID().getValue()));
             }
-            pessoa.setNome(formConcreto.getTextFieldNome().getText());
+            pessoa.setNome(formConcreto.getInputNome().getValue());
             return pessoa;
         } catch (Exception exception) {
             new EventMessage(exception.getMessage(), EventMessage.getTIPO_ERRO());
@@ -49,8 +49,8 @@ public class PessoaController extends BaseController {
         try {
             FormPessoa formConcreto = (FormPessoa) view;
             Pessoa modelConcreto = (Pessoa) model;
-            formConcreto.getTextFieldID().setText(Integer.toString(modelConcreto.getId()));
-            formConcreto.getTextFieldNome().setText(modelConcreto.getNome());
+            formConcreto.getInputID().setValue(Integer.toString(modelConcreto.getId()));
+            formConcreto.getInputNome().setValue(modelConcreto.getNome());
             formConcreto.repaint();
         } catch (Exception exception) {
             new EventMessage(exception.getMessage(), EventMessage.getTIPO_ERRO());

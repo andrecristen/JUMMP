@@ -22,11 +22,13 @@ public class BaseForm extends JFrame {
     private AbstractGrid gridParent;
     private LayoutManager layout;
     private Dimension dimensao;
+    public JPanel panelFormulario;
 
     public BaseForm(String titulo, Dimension dimensao, Action action) {
         super.setTitle(titulo);
         this.dimensao = dimensao;
         this.actionPersist = action;
+        this.panelFormulario = new JPanel();
         initComponents();
         addComponents();
     }

@@ -23,7 +23,7 @@ public class FormFilial extends BaseForm {
     private JLabel labelID;
     private JLabel labelNome;
     private JLabel labelEndereco;
-
+ 
     private JTextField textFieldID;
     private JTextField textFieldNome;
     private JComboBox comboBoxEndereco;
@@ -157,7 +157,7 @@ public class FormFilial extends BaseForm {
 
     public JComboBox getComboBoxEndereco() {
         return comboBoxEndereco;
-    }
+}
 
     public void setComboBoxEndereco(JComboBox comboBoxEndereco) {
         this.comboBoxEndereco = comboBoxEndereco;

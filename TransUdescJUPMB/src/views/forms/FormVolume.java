@@ -4,30 +4,23 @@ import JUMMP.forms.BaseForm;
 import JUMMP.forms.components.Input;
 import JUMMP.utils.Action;
 import java.awt.Dimension;
-import java.awt.GridBagConstraints;
 import java.awt.GridLayout;
 import javax.swing.JPanel;
 
 public class FormVolume extends BaseForm {
-
-    private GridBagConstraints cons;
     private Input inputId;
     private Input inputPesoBruto;
     private Input inputPesoLiquido;
     private Input inputCubagem;
 
-    private JPanel panelFormulario;
-
     public FormVolume(Action action) {
         super("Formulário Volume", new Dimension(500, 300), action);
-
         initComponents();
         addComponents();
     }
 
     private void initComponents() {
         GridLayout layout = new GridLayout(4, 1);
-        panelFormulario = new JPanel();
         panelFormulario.setLayout(layout);
     }
 
