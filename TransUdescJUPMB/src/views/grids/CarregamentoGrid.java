@@ -24,7 +24,7 @@ public class CarregamentoGrid extends AbstractGrid{
 
     @Override
     public String[] getColunas() {
-       String[] colunasCarregamentos = new String[]{"#", "Endereço chegada", "Endereço saída"};
+       String[] colunasCarregamentos = new String[]{"#", "Cidade chegada", "Cidade saída"};
        return colunasCarregamentos;
     }
     
@@ -37,9 +37,9 @@ public class CarregamentoGrid extends AbstractGrid{
             case 0:
                 return carregamento.getId();
             case 1:
-                return carregamento.getEnderecoChegada();
+                return carregamento.getEnderecoChegada().getCidade();
             case 2:
-                return carregamento.getEnderecoSaida();
+                return carregamento.getEnderecoSaida().getCidade();
             default:
                 return null;
         }
