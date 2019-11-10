@@ -54,8 +54,9 @@ public class TransportadoraRedespachoController extends BaseController {
             FormTransRedespacho formConcreto = (FormTransRedespacho) view;
             TransportadoraRedespacho modelConcreto = (TransportadoraRedespacho) model;
             formConcreto.getTextFieldID().setText(Integer.toString(modelConcreto.getId()));
-            formConcreto.getComboBoxPessoaJuridica().setSelectedItem(modelConcreto.getPessoaJuridica().getId());
-            
+            if(modelConcreto.getPessoaJuridica() != null){
+                formConcreto.getComboBoxPessoaJuridica().setSelectedItem(modelConcreto.getPessoaJuridica().getId());
+            } 
         } catch (Exception e) {
             new EventMessage(e.getMessage(), EventMessage.getTIPO_ERRO());
         }
