@@ -29,7 +29,7 @@ public class EntregaGrid extends AbstractGrid{
 
     
     @Override
-    public Object getValueAt(int rowIndex, int columnIndex) {
+    public Object getValueRowColumn(int rowIndex, int columnIndex) {
         Entrega entrega = (Entrega)super.getLinhas().get(rowIndex);
 
         switch (columnIndex) {

@@ -27,7 +27,7 @@ public class PessoaFisicaGrid extends AbstractGrid{
     }
 
     @Override
-    public Object getValueAt(int rowIndex, int columnIndex) {
+    public Object getValueRowColumn(int rowIndex, int columnIndex) {
       PessoaFisica pessoa = (PessoaFisica)super.getLinhas().get(rowIndex);
 
         switch (columnIndex) {

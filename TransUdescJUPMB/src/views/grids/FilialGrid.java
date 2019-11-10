@@ -28,7 +28,7 @@ public class FilialGrid extends AbstractGrid{
     }
 
     @Override
-    public Object getValueAt(int rowIndex, int columnIndex) {
+    public Object getValueRowColumn(int rowIndex, int columnIndex) {
         Filial filial = (Filial)super.getLinhas().get(rowIndex);
 
         switch (columnIndex) {

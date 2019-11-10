@@ -27,7 +27,7 @@ public class UsuarioGrid extends AbstractGrid{
     
 
     @Override
-    public Object getValueAt(int rowIndex, int columnIndex) {
+    public Object getValueRowColumn(int rowIndex, int columnIndex) {
       Usuario volume = (Usuario)super.getLinhas().get(rowIndex);
 
         switch (columnIndex) {

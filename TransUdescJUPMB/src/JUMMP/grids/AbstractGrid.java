@@ -89,5 +89,18 @@ public abstract class AbstractGrid extends AbstractTableModel {
     public void setController(BaseController controller) {
         this.controllerToList = controller;
     }
+   
+    public abstract Object getValueRowColumn(int rowIndex, int columnIndex);
+
+    @Override
+    public Object getValueAt(int rowIndex, int columnIndex) {
+        try{
+           return this.getValueRowColumn(rowIndex, columnIndex);
+        }catch(Exception exception){
+           return null;
+        }
+    }
+    
+    
 
 }

@@ -30,7 +30,7 @@ public class EnderecoGrid extends AbstractGrid{
     
     
     
-    public Object getValueAt(int rowIndex, int columnIndex) {
+    public Object getValueRowColumn(int rowIndex, int columnIndex) {
         Endereco endereco = (Endereco)super.getLinhas().get(rowIndex);
 
         switch (columnIndex) {

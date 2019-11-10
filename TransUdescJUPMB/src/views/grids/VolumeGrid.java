@@ -26,7 +26,7 @@ public class VolumeGrid extends AbstractGrid{
     }
 
     @Override
-    public Object getValueAt(int rowIndex, int columnIndex) {
+    public Object getValueRowColumn(int rowIndex, int columnIndex) {
       Volume volume = (Volume)super.getLinhas().get(rowIndex);
 
         switch (columnIndex) {
@@ -40,7 +40,7 @@ public class VolumeGrid extends AbstractGrid{
                 return volume.getCubagem();
             default:
                 return null;
-                        }
+        }
     }
     
 }

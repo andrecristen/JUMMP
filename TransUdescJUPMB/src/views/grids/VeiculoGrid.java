@@ -30,7 +30,7 @@ public class VeiculoGrid extends AbstractGrid{
     
 
     @Override
-    public Object getValueAt(int rowIndex, int columnIndex) {
+    public Object getValueRowColumn(int rowIndex, int columnIndex) {
       Veiculo veiculo = (Veiculo)super.getLinhas().get(rowIndex);
 
         switch (columnIndex) {

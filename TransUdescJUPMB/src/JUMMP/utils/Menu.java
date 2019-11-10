@@ -61,22 +61,10 @@ public class Menu extends JFrame {
         setJMenuBar(menuBar);
 
         JMenu crudMenu = new JMenu("Cadastros");
-        JMenu relatoriosMenu = new JMenu("Relatórios");
-        JMenu consultaAdmMenu = new JMenu("Consultas - Administrador");
-        JMenu verifVeiculosMenu = new JMenu("Verificar veículos");
-        JMenu cargasMenu = new JMenu("Cargas");
-        JMenu consultaEntregaMenu = new JMenu("Consultar Entregas");
-        JMenu estatisticasMenu = new JMenu("Estatísticas");
         JMenuItem sairMenu = new JMenuItem("Sair");
 
         //Coloca na barra de menu
-        //menuBar.add(estatisticasMenu);
         menuBar.add(crudMenu);
-//        menuBar.add(consultaAdmMenu);
-//        menuBar.add(verifVeiculosMenu);
-//        menuBar.add(cargasMenu);
-//        menuBar.add(relatoriosMenu);
-//        menuBar.add(consultaEntregaMenu);
         menuBar.add(sairMenu);
 
         sairMenu.addActionListener(new ActionListener() {
@@ -228,12 +216,6 @@ public class Menu extends JFrame {
                 frameRedespacho.display();
             }
         });
-
-        JMenuItem veiculosReparo = new JMenuItem("Veículos em reparo");
-        JMenuItem veiculosAguardandoReparo = new JMenuItem("Veículos aguardando reparo");
-
-        JMenuItem estatisticasGraficos = new JMenuItem("Gráficos");
-        JMenuItem estatisticasContadores = new JMenuItem("Contadores");
         
         crudMenu.add(carregamento);
         crudMenu.add(entregaCrud);
@@ -246,19 +228,5 @@ public class Menu extends JFrame {
         crudMenu.add(veiculo);
         crudMenu.add(volume);
         crudMenu.add(transportadora);
-
-        verifVeiculosMenu.add(veiculosReparo);
-        verifVeiculosMenu.add(veiculosAguardandoReparo);
-
-        consultaAdmMenu.add(clientes);
-        consultaAdmMenu.add(consulta_veiculos);
-        consultaAdmMenu.add(motoristas);
-        consultaAdmMenu.add(entregas);
-        consultaAdmMenu.add(volumes);
-
-        consultaEntregaMenu.add(entregaConsult);
-
-        estatisticasMenu.add(estatisticasGraficos);
-        estatisticasMenu.add(estatisticasContadores);
     }
 }

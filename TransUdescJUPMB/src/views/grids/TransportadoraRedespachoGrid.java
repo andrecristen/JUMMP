@@ -28,9 +28,9 @@ public class TransportadoraRedespachoGrid extends AbstractGrid{
         return colunasTransRedespacho;
     }
     
-
+    
     @Override
-    public Object getValueAt(int rowIndex, int columnIndex) {
+    public Object getValueRowColumn(int rowIndex, int columnIndex) {
       TransportadoraRedespacho transRedespacho = (TransportadoraRedespacho)super.getLinhas().get(rowIndex);
 
         switch (columnIndex) {
