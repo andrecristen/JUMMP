@@ -2,23 +2,12 @@ package views.forms;
 
 import JUMMP.forms.BaseForm;
 import JUMMP.forms.components.Input;
-import JUMMP.forms.components.InputDate;
 import JUMMP.forms.components.Select;
 import JUMMP.utils.Action;
 import controllers.PessoaController;
-import controllers.PessoaJuridicaController;
 import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.awt.Insets;
 import java.awt.LayoutManager;
-import javax.swing.JComboBox;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
 
 public class FormPessoaJuridica extends BaseForm {
 
