@@ -32,12 +32,12 @@ public class FilialController extends BaseController {
         try {
             Filial filial = new Filial();
             FormFilial formConcreto = (FormFilial) parameters;
-            if (!formConcreto.getTextFieldID().getText().isEmpty()) {
-                filial.setId(Integer.parseInt(formConcreto.getTextFieldID().getText()));
+            if (!formConcreto.getInputID().getValue().isEmpty()) {
+                filial.setId(Integer.parseInt(formConcreto.getInputID().getValue()));
             }
-            filial.setNome(formConcreto.getTextFieldNome().getText());
+            filial.setNome(formConcreto.getInputNome().getValue());
             EnderecoController enderecoController = new EnderecoController();
-            Endereco endereco = (Endereco) enderecoController.findById(Integer.parseInt(formConcreto.getComboBoxEndereco().getSelectedItem().toString()));
+            Endereco endereco = (Endereco) enderecoController.findById(Integer.parseInt(formConcreto.getSelectEndereco().getValue()));
             filial.setEndereco(endereco);
             return filial;
         } catch (Exception exception) {
@@ -51,9 +51,9 @@ public class FilialController extends BaseController {
         try {
             FormFilial formConcreto = (FormFilial) view;
             Filial modelConcreto = (Filial) model;
-            formConcreto.getTextFieldID().setText(Integer.toString(modelConcreto.getId()));
-            formConcreto.getTextFieldNome().setText(modelConcreto.getNome());
-            formConcreto.getComboBoxEndereco().setSelectedItem(modelConcreto.getEndereco().getId());
+            formConcreto.getInputID().setValue(Integer.toString(modelConcreto.getId()));
+            formConcreto.getInputNome().setValue(modelConcreto.getNome());
+            formConcreto.getSelectEndereco().setValue(modelConcreto.getEndereco().getId());
             formConcreto.repaint();
         } catch (Exception exception) {
             new EventMessage(exception.getMessage(), EventMessage.getTIPO_ERRO());
