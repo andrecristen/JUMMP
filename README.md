@@ -19,6 +19,13 @@ localizado em JUMMP/imports.
  - Named Query com nome de validarLogin, dentro do modelo de Usuario Exemplo: 
       * @NamedQueries(@NamedQuery(name="validarLogin",query="SELECT user FROM Usuario user WHERE user.login = ?1 AND user.senha = ?2")).
 
+## JUMMP/mail
+ Classe para envio de e-mail no JUMMP. Para funcionamento:
+ 
+ - Importar arquivo javax.mail.jar nas bibliotecas;
+ - Configurar informações do email de envio em JUMMP/mail/Email;
+ - Para enviar utilize EmailUtils (JUMMP/utils) método send(email do destinátario, titulo, mensagem);
+
 ## Configurações:
 
 - O nome da unidade de persistencia deve ser definido em Main/Home na constante PERSISTENCE_NAME;
