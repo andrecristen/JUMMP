@@ -40,7 +40,6 @@ public class FormPessoaFisica extends BaseForm {
 
     private void initComponents() {
         layout = new GridLayout(5, 1);
-        panelFormulario = new JPanel();
         panelFormulario.setLayout(layout);
     }
 
