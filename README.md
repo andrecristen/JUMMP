@@ -7,6 +7,7 @@ Para a estrutura funcionar corretamente, deve se importar estes dois arquivos
 localizado em JUMMP/imports.
 
 - javax.persistence.jar
+- javax.mail.jar
 - postgresql-42.2.2.jar
 
 - Adicionar biblioteca padrão EclipseLink (JPA 2.1);
