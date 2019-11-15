@@ -57,4 +57,4 @@ O sistema contará com os seguintes módulos.
  - **Mecânico**: Fornece uma interface para verificar veiculos que estão em reparo ou aguardando reparo.
  - **Gestor**: Fornece visualizações destinadas ao gerente da empresa, com consultas e gráficos relacionadas a empresa.
  
- ## Status: Em desenvolvimento
+ #### Status Aplicação Exemplo: Em desenvolvimento
