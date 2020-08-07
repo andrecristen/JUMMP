@@ -37,7 +37,7 @@ localizado em JUMMP/imports.
 - Todos controllers devem estender ao BaseController;
 - Todos forms devem estender ao BaseForm;
 - Todos grids devem estender ao AbstractGrid;
-- Os icones a serem usadas nas actions devem inseridos na pasta JUMMP/icons, e ao definir para a action, usar apenas o nome da imagem.
+- Os icones a serem usados nas actions devem inseridos na pasta JUMMP/icons, e ao definir para a action, usar apenas o nome da imagem.
 
 ## Erros previstos:
 - **Form em branco ao abrir**: Remover métodos getLayout() e setLayout(); 
