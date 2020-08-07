@@ -3,7 +3,7 @@ Micro frame Java Desktop para sistemas de CRUD.
 
 ## Requerimentos:
 
-Para a estrutura funcionar corretamente, deve se importar estes dois arquivos 
+Para a estrutura funcionar corretamente, deve se importar estes arquivos 
 localizado em JUMMP/imports.
 
 - javax.persistence.jar
