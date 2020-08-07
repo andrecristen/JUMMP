@@ -34,9 +34,9 @@ localizado em JUMMP/imports.
 
 ## Regras implementação:
 
-- Todos controllers devem extender ao BaseController;
-- Todos forms devem extender ao BaseForm;
-- Todos grids devem extender ao AbstractGrid;
+- Todos controllers devem estender ao BaseController;
+- Todos forms devem estender ao BaseForm;
+- Todos grids devem estender ao AbstractGrid;
 - Os icones a serem usadas nas actions devem inseridos na pasta JUMMP/icons, e ao definir para a action, usar apenas o nome da imagem.
 
 ## Erros previstos:
