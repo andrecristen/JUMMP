@@ -1,3 +1,5 @@
+## Status Aplicação: Descontinuada
+
 # JUMMP HELP.
 Micro frame Java Desktop para sistemas de CRUD.
 
@@ -57,4 +59,3 @@ O sistema contará com os seguintes módulos.
  - **Mecânico**: Fornece uma interface para verificar veiculos que estão em reparo ou aguardando reparo.
  - **Gestor**: Fornece visualizações destinadas ao gerente da empresa, com consultas e gráficos relacionadas a empresa.
  
- #### Status Aplicação Exemplo: Em desenvolvimento
